@@ -6,72 +6,72 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.DAO.LessionDetailDAO;
+import com.example.demo.DAO.LessionDetailRepository;
 import com.example.demo.model.LessionDetail;
 import com.example.demo.service.LessionDetailService;
 @Service
 public class LessionDetailServiceImpl implements LessionDetailService {
 	@Autowired
-	LessionDetailDAO lessionDetailDAO;
+	LessionDetailRepository lessionDetailRepository;
 
 	@Override
 	public LessionDetail save(LessionDetail entity) {
-		return lessionDetailDAO.save(entity);
+		return lessionDetailRepository.save(entity);
 	}
 
 	@Override
 	public List<LessionDetail> saveAll(List<LessionDetail> entities) {
-		return (List<LessionDetail>)lessionDetailDAO.saveAll(entities);
+		return (List<LessionDetail>)lessionDetailRepository.saveAll(entities);
 	}
 
 	@Override
 	public Optional<LessionDetail> findById(Long id) {
-		return lessionDetailDAO.findById(id);
+		return lessionDetailRepository.findById(id);
 	}
 
 	@Override
 	public boolean existsById(Long id) {
-		return lessionDetailDAO.existsById(id);
+		return lessionDetailRepository.existsById(id);
 	}
 
 	@Override
 	public List<LessionDetail> findAll() {
-		return (List<LessionDetail>)lessionDetailDAO.findAll();
+		return (List<LessionDetail>)lessionDetailRepository.findAll();
 	}
 
 	@Override
 	public List<LessionDetail> findAllById(List<Long> ids) {
-		return (List<LessionDetail>)lessionDetailDAO.findAllById(ids);
+		return (List<LessionDetail>)lessionDetailRepository.findAllById(ids);
 	}
 
 	@Override
 	public long count() {
-		return lessionDetailDAO.count();
+		return lessionDetailRepository.count();
 	}
 
 	@Override
 	public void deleteById(Long id) {
-		lessionDetailDAO.deleteById(id);
+		lessionDetailRepository.deleteById(id);
 	}
 
 	@Override
 	public void delete(LessionDetail entity) {
-		lessionDetailDAO.delete(entity);
+		lessionDetailRepository.delete(entity);
 	}
 
 	@Override
 	public void deleteAllById(List<Long> ids) {
-		lessionDetailDAO.deleteAllById(ids);
+		lessionDetailRepository.deleteAllById(ids);
 	}
 
 	@Override
 	public void deleteAll(List<LessionDetail> entities) {
-		lessionDetailDAO.deleteAll(entities);
+		lessionDetailRepository.deleteAll(entities);
 	}
 
 	@Override
 	public void deleteAll() {
-		lessionDetailDAO.deleteAll();
+		lessionDetailRepository.deleteAll();
 	}
 	
 }
