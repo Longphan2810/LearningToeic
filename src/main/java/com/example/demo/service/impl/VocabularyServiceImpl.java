@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.DAO.VocabularyRepository;
+import com.example.demo.model.Thematic;
 import com.example.demo.model.Vocabulary;
 import com.example.demo.service.VocabularyService;
 @Service
@@ -73,6 +74,10 @@ public class VocabularyServiceImpl implements VocabularyService  {
 	@Override
 	public void deleteAll() {
 		vocabularyRepository.deleteAll();
+	}
+
+	public List<Vocabulary> FindAllByThematic(Thematic thematic) {
+		return vocabularyRepository.FindAllByThematic(thematic);
 	}
 	
 }
