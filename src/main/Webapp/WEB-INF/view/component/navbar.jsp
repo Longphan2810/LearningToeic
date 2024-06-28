@@ -1,28 +1,54 @@
-<a class="btn btn-primary col-1" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-  Link with href
-</a>
-<button class="btn btn-primary col-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-  Button with data-bs-target
-</button>
+<div class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-dark h-100">
+			<div class="offcanvas-md offcanvas-end bg-body-dark"
+				tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel" >
+		
+				<div
+					class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto" > 
+					<ul class="nav flex-column">
+						<li class="nav-item"><a
+							class="nav-link d-flex align-items-center gap-2 active"
+							aria-current="page" href="#"> <svg class="bi">
+									<use xlink:href="#house-fill" /></svg> Dashboard
+						</a></li>
+						<li class="nav-item"><a
+							class="nav-link d-flex align-items-center gap-2" href="#"> <svg
+									class="bi">
+									<use xlink:href="#file-earmark" /></svg> Orders
+						</a></li>
+						<li class="nav-item"><a
+							class="nav-link d-flex align-items-center gap-2" href="#"> <svg
+									class="bi">
+									<use xlink:href="#cart" /></svg> Products
+						</a></li>
+						<li class="nav-item"><a
+							class="nav-link d-flex align-items-center gap-2" href="#"> <svg
+									class="bi">
+									<use xlink:href="#people" /></svg> Customers
+						</a></li>
+						<li class="nav-item"><a
+							class="nav-link d-flex align-items-center gap-2" href="#"> <svg
+									class="bi">
+									<use xlink:href="#graph-up" /></svg> Reports
+						</a></li>
+						<li class="nav-item"><a
+							class="nav-link d-flex align-items-center gap-2" href="#"> <svg
+									class="bi">
+									<use xlink:href="#puzzle" /></svg> Integrations
+						</a></li>
+					</ul><hr class="my-3">
 
-<div class="offcanvas offcanvas-start col-lg-12" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div class="dropdown mt-3 col-lg-12">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-        Dropdown button
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
+					<ul class="nav flex-column mb-auto">
+						<li class="nav-item"><a
+							class="nav-link d-flex align-items-center gap-2" href="#"> <svg
+									class="bi">
+									<use xlink:href="#gear-wide-connected" /></svg> Settings
+						</a></li>
+						<li class="nav-item"><a
+							class="nav-link d-flex align-items-center gap-2" href="#"> <svg
+									class="bi">
+									<use xlink:href="#door-closed" /></svg> Sign out
+						</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
