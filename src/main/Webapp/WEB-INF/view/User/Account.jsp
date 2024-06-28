@@ -16,7 +16,7 @@
 <body>
 	
 	<div class="row lg container-fluid">
-		<jsp:include page="/view/component/navbar.jsp"></jsp:include>
+		<jsp:include page="/WEB-INF/view/component/navbar.jsp"></jsp:include>
 	
 	</div>
 </body>
