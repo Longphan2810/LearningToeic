@@ -3,6 +3,7 @@ package com.example.demo.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.example.demo.model.Thematic;
 import com.example.demo.model.Vocabulary;
 
 public interface VocabularyService {
@@ -30,5 +31,7 @@ public interface VocabularyService {
 	List<Vocabulary> saveAll(List<Vocabulary> entities);
 
 	Vocabulary save(Vocabulary entity);
+
+	List<Vocabulary> FindAllByThematic(Thematic thematic);
 
 }

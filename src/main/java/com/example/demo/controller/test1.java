@@ -34,7 +34,8 @@ public class test1 {
 		List<Question> listQuestion = new ArrayList<Question>();
 
 		for (Vocabulary vocabulary : lVoca) {
-			System.out.println(vocabulary.getEnglishVerion());
+
+			
 			double numberCheck = Math.round(Math.random());
 			
 		
@@ -48,7 +49,7 @@ public class test1 {
 				}
 				
 				System.out.println("==========================");
-				break;
+//				break;
 			}
 			else {
 //				System.out.println("==========================");

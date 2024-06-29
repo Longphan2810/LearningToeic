@@ -10,8 +10,9 @@ import com.example.demo.DAO.VocabularyRepository;
 import com.example.demo.model.Thematic;
 import com.example.demo.model.Vocabulary;
 import com.example.demo.service.VocabularyService;
+
 @Service
-public class VocabularyServiceImpl implements VocabularyService  {
+public class VocabularyServiceImpl implements VocabularyService {
 
 	@Autowired
 	VocabularyRepository vocabularyRepository;
@@ -22,8 +23,8 @@ public class VocabularyServiceImpl implements VocabularyService  {
 	}
 
 	@Override
-	public List<Vocabulary> saveAll( List<Vocabulary> entities) {
-		return (List<Vocabulary>)vocabularyRepository.saveAll(entities);
+	public List<Vocabulary> saveAll(List<Vocabulary> entities) {
+		return (List<Vocabulary>) vocabularyRepository.saveAll(entities);
 	}
 
 	@Override
@@ -37,13 +38,13 @@ public class VocabularyServiceImpl implements VocabularyService  {
 	}
 
 	@Override
-	public List<Vocabulary>  findAll() {
-		return (List<Vocabulary> )vocabularyRepository.findAll();
+	public List<Vocabulary> findAll() {
+		return (List<Vocabulary>) vocabularyRepository.findAll();
 	}
 
 	@Override
-	public List<Vocabulary>  findAllById(List<Long> ids) {
-		return (List<Vocabulary>)vocabularyRepository.findAllById(ids);
+	public List<Vocabulary> findAllById(List<Long> ids) {
+		return (List<Vocabulary>) vocabularyRepository.findAllById(ids);
 	}
 
 	@Override
@@ -67,7 +68,7 @@ public class VocabularyServiceImpl implements VocabularyService  {
 	}
 
 	@Override
-	public void deleteAll(List<Vocabulary>  entities) {
+	public void deleteAll(List<Vocabulary> entities) {
 		vocabularyRepository.deleteAll(entities);
 	}
 
@@ -76,8 +77,9 @@ public class VocabularyServiceImpl implements VocabularyService  {
 		vocabularyRepository.deleteAll();
 	}
 
+	@Override
 	public List<Vocabulary> FindAllByThematic(Thematic thematic) {
 		return vocabularyRepository.FindAllByThematic(thematic);
 	}
-	
+
 }

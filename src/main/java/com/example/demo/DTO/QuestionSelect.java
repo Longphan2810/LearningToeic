@@ -27,13 +27,11 @@ public class QuestionSelect extends Question {
 
 	private void fillListToCreateQuestion(Vocabulary voca, List<Vocabulary> list) {
 		int size = list.size();
-		System.out.println(size);
-
 //		list.remove(voca);
 		list3VocabularyOther.add(list.get(0));
 		list3VocabularyOther.add(list.get(size / 2));
 		list3VocabularyOther.add(list.get(size - 2));
-
+		
 	}
 
 	@Override
