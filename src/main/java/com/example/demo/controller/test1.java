@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -8,7 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.demo.DTO.Question;
 import com.example.demo.DTO.QuestionSelect;
+import com.example.demo.DTO.QuestionWrite;
 import com.example.demo.model.Thematic;
 import com.example.demo.model.Vocabulary;
 import com.example.demo.service.impl.ThematicServiceImpl;
@@ -19,28 +22,50 @@ public class test1 {
 
 	@Autowired
 	VocabularyServiceImpl vocabularyServiceImpl;
-	
+
 	@Autowired
 	ThematicServiceImpl thematicServiceImpl;
-	
+
 	@RequestMapping("/test")
 	@ResponseBody
 	public String test1() {
-		Optional<Thematic> t = thematicServiceImpl.findById(1l);
-	    List<Vocabulary> lVoca =	vocabularyServiceImpl.FindAllByThematic(t.get());
+		Optional<Thematic> t = thematicServiceImpl.findById(2l);
+		List<Vocabulary> lVoca = vocabularyServiceImpl.FindAllByThematic(t.get());
+		List<Question> listQuestion = new ArrayList<Question>();
+
+		for (Vocabulary vocabulary : lVoca) {
+			System.out.println(vocabulary.getEnglishVerion());
+			double numberCheck = Math.round(Math.random());
+			
 		
-	    for (Vocabulary vocabulary : lVoca) {
-			QuestionSelect nq = new QuestionSelect(vocabulary,lVoca);
-			System.out.println(nq.getVoca().getEnglishVerion());
-			System.out.println("==========================");
-			for (Vocabulary vocabulary2 : nq.getList3VocabularyOther()) {
+			if (numberCheck == 0) {
+				System.out.println("==========================");
+				QuestionSelect questionCurrent  = new QuestionSelect(vocabulary, lVoca);
+				System.out.println(questionCurrent.getVoca().getEnglishVerion());
+				for (Vocabulary voca : questionCurrent.getList3VocabularyOther()) {
+					System.out.println(voca.getEnglishVerion());
+					
+				}
 				
-				System.out.println(vocabulary2.getEnglishVerion());
+				System.out.println("==========================");
+				break;
 			}
-			break;
+			else {
+//				System.out.println("==========================");
+//				Question questionCurrent  = new QuestionWrite(vocabulary);
+//				System.out.println(questionCurrent.getVoca().getEnglishVerion());
+//				listQuestion.add(questionCurrent);
+//				System.out.println("input ");
+//				System.out.println("==========================");
+//				
+//				
+			}
+
+			
+
 		}
-	    
+
 		return "";
 	}
-	
+
 }

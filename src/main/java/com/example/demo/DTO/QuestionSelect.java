@@ -9,35 +9,36 @@ import com.example.demo.model.Vocabulary;
 import com.example.demo.service.impl.VocabularyServiceImpl;
 
 import lombok.Data;
+
 @Data
 public class QuestionSelect extends Question {
 
 	@Autowired
 	VocabularyServiceImpl vocabularyServiceImpl;
-	
-	private String format = "select";
-	private List<Vocabulary> list3VocabularyOther = new ArrayList<>();
 
-	public QuestionSelect(Vocabulary voca,List<Vocabulary> listInput) {
+	String format = "select";
+	List<Vocabulary> list3VocabularyOther = new ArrayList<Vocabulary>();
+
+	public QuestionSelect(Vocabulary voca, List<Vocabulary> listInput) {
 		super(voca);
-		fillListToCreateQuestion(voca,listInput);
-		
+		fillListToCreateQuestion(voca, listInput);
+
 	}
-	private void fillListToCreateQuestion(Vocabulary voca,List<Vocabulary> list) {
-	int size = list.size();
-		list.remove(voca);
+
+	private void fillListToCreateQuestion(Vocabulary voca, List<Vocabulary> list) {
+		int size = list.size();
+		System.out.println(size);
+
+//		list.remove(voca);
 		list3VocabularyOther.add(list.get(0));
-		list3VocabularyOther.add(list.get(size/2));
-		list3VocabularyOther.add(list.get(size-2));
-		
+		list3VocabularyOther.add(list.get(size / 2));
+		list3VocabularyOther.add(list.get(size - 2));
+
 	}
+
 	@Override
 	public String toString() {
-		return "QuestionSelect [ , format=" + format
-				+ ", list4Vocabulary=" + list3VocabularyOther + "]";
+		return "QuestionSelect [ , format=" + format + ", list4Vocabulary=" + list3VocabularyOther + "]";
 	}
-	
-	
-	
-	
+
 }
