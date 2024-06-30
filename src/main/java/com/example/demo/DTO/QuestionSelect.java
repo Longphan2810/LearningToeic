@@ -30,8 +30,8 @@ public class QuestionSelect extends Question {
 	      
 	        List<Vocabulary> tempList = new ArrayList<>(list);
 	        tempList.remove(voca);
-	        list3VocabularyOther.add(tempList.get(0));
-	        list3VocabularyOther.add(tempList.get(size / 2 - 1));
+	        list3VocabularyOther.add(tempList.get(size/3));
+	        list3VocabularyOther.add(tempList.get(size / 2));
 	        list3VocabularyOther.add(tempList.get(size - 2));
 	}
 
