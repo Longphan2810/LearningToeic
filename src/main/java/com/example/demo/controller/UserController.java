@@ -28,7 +28,10 @@ public class UserController {
 	public String requestInfo() {
 		return "User/info";
 	}
-	
+	@RequestMapping("/statistic")
+	public String requestStatistic() {
+		return "User/statistic";
+	}
 	@RequestMapping("/home")
 	public String requestHome() {
 		return "User/home2";
@@ -38,5 +41,6 @@ public class UserController {
 	public String requestaccount() {
 		return "User/Account";
 	}
+	
 	
 }

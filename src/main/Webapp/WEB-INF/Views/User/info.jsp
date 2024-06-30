@@ -44,6 +44,15 @@
 	</svg>
 
 		</a>
+		<a type="button" href="/statistic" class="btn p-4  "> <svg
+					xmlns="http://www.w3.org/2000/svg" width="33" height="33"
+					fill="currentColor" class="bi bi-bar-chart-fill"
+					viewBox="0 0 16 16">
+  <path
+						d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z" />
+</svg>
+
+			</a>
 		<a type="button" href="/info"  class="btn p-3  acctiveCustom">
 		<svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
