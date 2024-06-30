@@ -32,14 +32,14 @@
 	<!-- Dap an -->
 	<div class="row">
 		<div class="col-3"></div>
-		<div class="col-6 row g-2">
-			<h6>Chọn Từ</h6>
+		<div class="col-6 row g-3">
+			<h5>Chọn Từ</h5>
 			<h4 class="text-center my-3">(verb) Cân Nhắc/Đắng đo</h4>
 			<c:forEach var="i" begin="1" end="4">
-				<div class="col-6">
-					<div class="card position-relative " style="height: 10rem;">
+				<div class="col-6 ">
+					<div class="card position-relative border-success shadow bg-body-tertiary rounded border-2 rounded-2" style="height: 10rem;">
 						<div
-							class="card-body  text-center position-absolute top-50 start-50 translate-middle">
+							class="card-body text-center position-absolute top-50 start-50 translate-middle">
 							<h3>Dữ liệu</h3>
 						</div>
 					</div>
