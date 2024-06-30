@@ -48,14 +48,13 @@ public class UserController {
 		return "User/info";
 	}
 
-<<<<<<< HEAD
+
 	@RequestMapping("/statistic")
 	public String requestStatistic() {
 		return "User/statistic";
 	}
 
-=======
->>>>>>> refs/remotes/origin/main
+
 	@RequestMapping("/home")
 	public String requestHome() {
 		return "User/home2";
