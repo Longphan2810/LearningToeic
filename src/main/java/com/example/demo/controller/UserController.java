@@ -47,7 +47,10 @@ public class UserController {
 	public String requestInfo() {
 		return "User/info";
 	}
-
+	@RequestMapping("/contact")
+	public String requestContact() {
+		return "User/contact";
+	}
 
 	@RequestMapping("/statistic")
 	public String requestStatistic() {
