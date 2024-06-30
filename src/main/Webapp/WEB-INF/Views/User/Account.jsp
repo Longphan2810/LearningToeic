@@ -1,11 +1,20 @@
+<<<<<<< HEAD
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+=======
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c"%>
+>>>>>>> 6d20a7e527c760e14baac4756b4896977eab2b2b
 <!DOCTYPE html>
 <html>
 <head>
 
+<<<<<<< HEAD
+<meta charset="ISO-8859-1">
+=======
 <meta charset="UTF-8">
+>>>>>>> 6d20a7e527c760e14baac4756b4896977eab2b2b
 <title>Learing_Toeic</title>
 
 <link
@@ -107,6 +116,8 @@ style>.bd-placeholder-img {
 .bd-mode-toggle .dropdown-menu .active .bi {
 	display: block !important;
 }
+<<<<<<< HEAD
+=======
 
 .sidebar {
 	height: 100%;
@@ -115,6 +126,7 @@ style>.bd-placeholder-img {
 .offcanvas-md {
 	height: 100%;
 }
+>>>>>>> 6d20a7e527c760e14baac4756b4896977eab2b2b
 </style>
 
 <body>
@@ -127,6 +139,10 @@ style>.bd-placeholder-img {
 			<!-- Source icon -->
 			<jsp:include page="../component/icon.jsp"></jsp:include>
 			<!-- Navbar -->
+
+			<jsp:include page="../component/navbar.jsp"></jsp:include>
+			<div class="bg-primary"></div>
+
 
 			<jsp:include page="../component/navbar.jsp"></jsp:include>
 
@@ -198,8 +214,11 @@ style>.bd-placeholder-img {
 			</main>
 
 
+
 		</div>
 	</div>
 
 </body>
+
 </html>
+
