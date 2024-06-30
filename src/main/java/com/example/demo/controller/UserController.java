@@ -19,5 +19,20 @@ public class UserController {
 		return "User/layout";
 	}
 	
+	@RequestMapping("/voca")
+	public String requestVoca() {
+		return "User/Vocabulary";
+	}
+	
+	@RequestMapping("/info")
+	public String requestInfo() {
+		return "User/info";
+	}
+	
+	@RequestMapping("/home")
+	public String requestHome() {
+		return "User/home";
+	}
+	
 	
 }
