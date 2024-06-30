@@ -13,4 +13,10 @@ public abstract class Question {
 
 	private Vocabulary voca;
 	
+	private String format;
+	
+	public List<Vocabulary> getlist3VocabularyOther(){
+		return null;
+	}
+	
 }

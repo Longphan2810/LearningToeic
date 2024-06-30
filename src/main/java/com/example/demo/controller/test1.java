@@ -35,35 +35,46 @@ public class test1 {
 
 		for (Vocabulary vocabulary : lVoca) {
 
-			
 			double numberCheck = Math.round(Math.random());
-			
-		
+
 			if (numberCheck == 0) {
 				System.out.println("==========================");
-				QuestionSelect questionCurrent  = new QuestionSelect(vocabulary, lVoca);
+				QuestionSelect questionCurrent = new QuestionSelect(vocabulary, lVoca);
 				System.out.println(questionCurrent.getVoca().getEnglishVerion());
-				for (Vocabulary voca : questionCurrent.getList3VocabularyOther()) {
+				listQuestion.add(questionCurrent);
+				for (Vocabulary voca : questionCurrent.getlist3VocabularyOther()) {
 					System.out.println(voca.getEnglishVerion());
-					
+
 				}
-				
+
 				System.out.println("==========================");
-//				break;
-			}
-			else {
-//				System.out.println("==========================");
-//				Question questionCurrent  = new QuestionWrite(vocabulary);
-//				System.out.println(questionCurrent.getVoca().getEnglishVerion());
-//				listQuestion.add(questionCurrent);
-//				System.out.println("input ");
-//				System.out.println("==========================");
-//				
-//				
+			} else {
+				System.out.println("==========================");
+				Question questionCurrent = new QuestionWrite(vocabulary);
+				System.out.println(questionCurrent.getVoca().getEnglishVerion());
+				listQuestion.add(questionCurrent);
+				System.out.println("input ");
+				System.out.println("==========================");
+
 			}
 
-			
+		}
+		System.out.println("=============Question=============");
+		for (Question question : listQuestion) {
+			System.out.println("==========================");
+			if (question.getFormat().equalsIgnoreCase("write")) {
+				System.out.println("++++++input+++++++");
+				System.out.println(question.getVoca().getEnglishVerion());
+			}
+			if (question.getFormat().equalsIgnoreCase("select")) {
+				System.out.println("+++++++select++++++");
+				System.out.println(question.getVoca().getEnglishVerion());
+				for (Vocabulary voca : question.getlist3VocabularyOther()) {
+					System.out.println(voca.getEnglishVerion());
+				}
 
+			}
+			System.out.println("==========================");
 		}
 
 		return "";
