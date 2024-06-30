@@ -14,5 +14,10 @@ public class UserController {
 		return "User/Account";
 	}
 	
+	@RequestMapping("/layout")
+	public String requestLayout() {
+		return "User/layout";
+	}
+	
 	
 }
