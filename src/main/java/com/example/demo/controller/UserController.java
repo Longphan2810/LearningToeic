@@ -14,5 +14,15 @@ public class UserController {
 		return "User/Account";
 	}
 	
+	@RequestMapping("/layout")
+	public String requestLayout() {
+		return "User/layout";
+	}
+	
+	@RequestMapping("/Question")
+	public String ques() {
+		return "User/QuestionType1";
+	}
+	
 	
 }

@@ -1,20 +1,12 @@
-<<<<<<< HEAD
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-=======
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c"%>
->>>>>>> 6d20a7e527c760e14baac4756b4896977eab2b2b
 <!DOCTYPE html>
 <html>
 <head>
 
-<<<<<<< HEAD
-<meta charset="ISO-8859-1">
-=======
 <meta charset="UTF-8">
->>>>>>> 6d20a7e527c760e14baac4756b4896977eab2b2b
 <title>Learing_Toeic</title>
 
 <link
@@ -116,8 +108,8 @@ style>.bd-placeholder-img {
 .bd-mode-toggle .dropdown-menu .active .bi {
 	display: block !important;
 }
-<<<<<<< HEAD
-=======
+
+
 
 .sidebar {
 	height: 100%;
@@ -126,7 +118,6 @@ style>.bd-placeholder-img {
 .offcanvas-md {
 	height: 100%;
 }
->>>>>>> 6d20a7e527c760e14baac4756b4896977eab2b2b
 </style>
 
 <body>
@@ -141,84 +132,43 @@ style>.bd-placeholder-img {
 			<!-- Navbar -->
 
 			<jsp:include page="../component/navbar.jsp"></jsp:include>
-			<div class="bg-primary"></div>
-
-
-			<jsp:include page="../component/navbar.jsp"></jsp:include>
 
 			<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-				<h3 class="mt-3">Cài đặt / Setting:</h3>
-
-				<div class="row g-4 mt-2">
-
-					<div class="col-4 ">
-						<div>
-							<h5>Tài khoản</h5>
-							<div class="card border rounded">
-								<ul class="list-group list-group-flush">
-									<li class="list-group-item py-4 d-flex">
-										<div>
-											<img alt="" src="/img/user.jpg">
+				<h3 class="mt-3">600 từ vựng Toeic</h3>
+				<h6>Đã học:</h6>
+				<h6>Cần luyện tập:</h6>
+				<div class="row g-4">
+					<c:forEach var="i" begin="1" end="8">
+						<div class="col-3">
+							<div class="card">
+								<img src="/img/car.jpg" class="card-img-top" style="height: 80%"
+									alt="...">
+								<div class="card-body text-center algin-self-center">
+									<h5 class="card-title">Chủ đề</h5>
+									<div class="row g-0" style="width: 100%; height:">
+										<div class="col-9">
+											<i class="bi bi-check-circle"></i> đã học 6/10
 										</div>
-										<div class="ms-2 mt-2">
-											<h5>Username</h5>
-											<a href="">chỉnh sửa thông tin</a>
-										</div>
-
-
-									</li>
-									<li class="list-group-item">A second item</li>
-									<li class="list-group-item">A third item</li>
-									<li class="list-group-item">A fourth item</li>
-									<li class="list-group-item">And a fifth one</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-4">
-						<div>
-							<h5>Giao diện</h5>
-							<div class="card border">
-								<ul class="list-group list-group-flush">
-									<li class="list-group-item p-4">
-										<div class="form-check form-switch">
-											<input class="form-check-input" type="checkbox" role="switch"
-												id="flexSwitchCheckDefault"> <label
-												class="form-check-label ps-2" for="flexSwitchCheckDefault">Dark
-												Mode </label>
+										<div class="col-3">
+											<i class="bi bi-heart-fill"></i>
 										</div>
 
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-4">
-						<div>
-							<h5>Học và Luyện tập</h5>
-							<div class="card border">
-								<ul class="list-group list-group-flush">
-									<li class="list-group-item">An item</li>
-									<li class="list-group-item">A second item</li>
-									<li class="list-group-item">A third item</li>
-									<li class="list-group-item">A fourth item</li>
-									<li class="list-group-item">And a fifth one</li>
-								</ul>
-							</div>
-						</div>
-					</div>
+									</div>
 
+								</div>
+							</div>
+						</div>
+					</c:forEach>
 
 				</div>
 
-			</main>
 
+
+			</main>
 
 
 		</div>
 	</div>
 
 </body>
-
 </html>
-
