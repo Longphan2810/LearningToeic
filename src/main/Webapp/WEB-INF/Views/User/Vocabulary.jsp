@@ -68,7 +68,7 @@
 			600 từ vựng toeic
 			</div>
 			</div>
-			<div class=" w-100 shadow rounded row "   >
+			<div class=" w-100 shadow rounded row " style="overflow-y: scroll; height: 700px;"   >
 			
 				
 			<%-- chu de --%>
@@ -86,6 +86,118 @@
 			</div>
 				<%-- chu de end --%>
 					<%-- chu de --%>
+			<div class=" my-3 col-4 chudehoc  ">
+				<div class="card" style="width: 100%">
+ 		 <img src="./assets/image/download.png" class="card-img-top"  style="width: 100%s ; height: 160px" alt="...">
+		  <div class="card-body">
+		    <h5 class="card-title"> Chủ Đề : Hợp Đồng</h5>
+  		  <p class="card-text">Đã học : 12/12 từ vựng</p>
+  		  <div class="w-100 text-center">
+  		  <button type="button" class=" btn btn-success">Bắt đầu</button>
+   			</div>
+ 		 </div>
+		</div>
+			</div>
+				<%-- chu de end --%>
+						<%-- chu de --%>
+			<div class=" my-3 col-4 chudehoc  ">
+				<div class="card" style="width: 100%">
+ 		 <img src="./assets/image/download.png" class="card-img-top"  style="width: 100%s ; height: 160px" alt="...">
+		  <div class="card-body">
+		    <h5 class="card-title"> Chủ Đề : Hợp Đồng</h5>
+  		  <p class="card-text">Đã học : 12/12 từ vựng</p>
+  		  <div class="w-100 text-center">
+  		  <button type="button" class=" btn btn-success">Bắt đầu</button>
+   			</div>
+ 		 </div>
+		</div>
+			</div>
+				<%-- chu de end --%>
+						<%-- chu de --%>
+			<div class=" my-3 col-4 chudehoc  ">
+				<div class="card" style="width: 100%">
+ 		 <img src="./assets/image/download.png" class="card-img-top"  style="width: 100%s ; height: 160px" alt="...">
+		  <div class="card-body">
+		    <h5 class="card-title"> Chủ Đề : Hợp Đồng</h5>
+  		  <p class="card-text">Đã học : 12/12 từ vựng</p>
+  		  <div class="w-100 text-center">
+  		  <button type="button" class=" btn btn-success">Bắt đầu</button>
+   			</div>
+ 		 </div>
+		</div>
+			</div>
+				<%-- chu de end --%>
+						<%-- chu de --%>
+			<div class=" my-3 col-4 chudehoc  ">
+				<div class="card" style="width: 100%">
+ 		 <img src="./assets/image/download.png" class="card-img-top"  style="width: 100%s ; height: 160px" alt="...">
+		  <div class="card-body">
+		    <h5 class="card-title"> Chủ Đề : Hợp Đồng</h5>
+  		  <p class="card-text">Đã học : 12/12 từ vựng</p>
+  		  <div class="w-100 text-center">
+  		  <button type="button" class=" btn btn-success">Bắt đầu</button>
+   			</div>
+ 		 </div>
+		</div>
+			</div>
+				<%-- chu de end --%>
+						<%-- chu de --%>
+			<div class=" my-3 col-4 chudehoc  ">
+				<div class="card" style="width: 100%">
+ 		 <img src="./assets/image/download.png" class="card-img-top"  style="width: 100%s ; height: 160px" alt="...">
+		  <div class="card-body">
+		    <h5 class="card-title"> Chủ Đề : Hợp Đồng</h5>
+  		  <p class="card-text">Đã học : 12/12 từ vựng</p>
+  		  <div class="w-100 text-center">
+  		  <button type="button" class=" btn btn-success">Bắt đầu</button>
+   			</div>
+ 		 </div>
+		</div>
+			</div>
+				<%-- chu de end --%>
+						<%-- chu de --%>
+			<div class=" my-3 col-4 chudehoc  ">
+				<div class="card" style="width: 100%">
+ 		 <img src="./assets/image/download.png" class="card-img-top"  style="width: 100%s ; height: 160px" alt="...">
+		  <div class="card-body">
+		    <h5 class="card-title"> Chủ Đề : Hợp Đồng</h5>
+  		  <p class="card-text">Đã học : 12/12 từ vựng</p>
+  		  <div class="w-100 text-center">
+  		  <button type="button" class=" btn btn-success">Bắt đầu</button>
+   			</div>
+ 		 </div>
+		</div>
+			</div>
+				<%-- chu de end --%>
+						<%-- chu de --%>
+			<div class=" my-3 col-4 chudehoc  ">
+				<div class="card" style="width: 100%">
+ 		 <img src="./assets/image/download.png" class="card-img-top"  style="width: 100%s ; height: 160px" alt="...">
+		  <div class="card-body">
+		    <h5 class="card-title"> Chủ Đề : Hợp Đồng</h5>
+  		  <p class="card-text">Đã học : 12/12 từ vựng</p>
+  		  <div class="w-100 text-center">
+  		  <button type="button" class=" btn btn-success">Bắt đầu</button>
+   			</div>
+ 		 </div>
+		</div>
+			</div>
+				<%-- chu de end --%>
+						<%-- chu de --%>
+			<div class=" my-3 col-4 chudehoc  ">
+				<div class="card" style="width: 100%">
+ 		 <img src="./assets/image/download.png" class="card-img-top"  style="width: 100%s ; height: 160px" alt="...">
+		  <div class="card-body">
+		    <h5 class="card-title"> Chủ Đề : Hợp Đồng</h5>
+  		  <p class="card-text">Đã học : 12/12 từ vựng</p>
+  		  <div class="w-100 text-center">
+  		  <button type="button" class=" btn btn-success">Bắt đầu</button>
+   			</div>
+ 		 </div>
+		</div>
+			</div>
+				<%-- chu de end --%>
+						<%-- chu de --%>
 			<div class=" my-3 col-4 chudehoc  ">
 				<div class="card" style="width: 100%">
  		 <img src="./assets/image/download.png" class="card-img-top"  style="width: 100%s ; height: 160px" alt="...">
