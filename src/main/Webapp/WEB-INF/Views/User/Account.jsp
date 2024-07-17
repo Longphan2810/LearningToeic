@@ -1,10 +1,12 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-
+<meta charset="ISO-8859-1">
 <meta charset="UTF-8">
 <title>Learing_Toeic</title>
 
@@ -108,6 +110,8 @@ style>.bd-placeholder-img {
 	display: block !important;
 }
 
+
+
 .sidebar {
 	height: 100%;
 }
@@ -127,6 +131,10 @@ style>.bd-placeholder-img {
 			<!-- Source icon -->
 			<jsp:include page="../component/icon.jsp"></jsp:include>
 			<!-- Navbar -->
+
+			<jsp:include page="../component/navbar.jsp"></jsp:include>
+			<div class="bg-primary"></div>
+
 
 			<jsp:include page="../component/navbar.jsp"></jsp:include>
 
@@ -198,8 +206,11 @@ style>.bd-placeholder-img {
 			</main>
 
 
+
 		</div>
 	</div>
 
 </body>
+
 </html>
+

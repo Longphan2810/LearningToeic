@@ -5,7 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
@@ -18,7 +24,18 @@
 .btn:hover {
 	background-color: rgb(226, 241, 232);
 }
+.brand {
+	background-color: rgb(29, 131, 9);
+}
 
+.bg_card {
+	background-color: whitesmoke;
+}
+/* .setting_layout{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;  } */
+.form_header {
+	font-size: 1.675em;
+}
 </style>
 
 </head>
@@ -44,6 +61,15 @@
 	</svg>
 
 		</a>
+		<a type="button" href="/statistic" class="btn p-4  "> <svg
+					xmlns="http://www.w3.org/2000/svg" width="33" height="33"
+					fill="currentColor" class="bi bi-bar-chart-fill"
+					viewBox="0 0 16 16">
+  <path
+						d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z" />
+</svg>
+
+			</a>
 		<a type="button" href="/info"  class="btn p-3  acctiveCustom">
 		<svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
@@ -61,7 +87,253 @@
 		</div>
 	<%--------------------------- Content --------------------------%>
 		<div class=" col-11" style="height: 700px;  ">
-		
+		<div class="row ">
+		<h4 class="brand py-3 text-light">Cài Đặt</h4>
+	</div>
+
+	<div class=" rounded row container px-1 ">
+		<div class="col-lg-1"></div>
+		<div class="col-lg-3 ">
+			<div>
+				<label for="" class="form-label form_header text-success">Tài
+					Khoản</label>
+				<div class="card bg_card" style="width: 18rem;">
+					<div class="card-body ">
+						<div class="d-flex align-items-center mb-4">
+							<div class="flex-shrink-0">
+								<img
+									src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-2.webp"
+									alt="Generic placeholder image"
+									class="img-fluid rounded-circle border border-dark border-3"
+									style="width: 70px;">
+							</div>
+							<div class="flex-grow-1 ms-3">
+								<div class="d-flex flex-row align-items-center mb-2">
+									<p class="mb-0 me-2">Long Phan</p>
+
+								</div>
+								<div>
+									<button type="button" data-mdb-button-init data-mdb-ripple-init
+										class="btn btn-outline-dark btn-rounded btn-sm"
+										data-mdb-ripple-color="dark" data-toggle="modal" data-target="#editEmployeeModal">See profile</button>
+								</div>
+							</div>
+
+						</div>
+						<div class="d-flex py-4">
+							<i class="fa fa-chevron-up mt-1 text-success px-1 "
+								aria-hidden="true"></i> <a
+								class="text-decoration-none text-dark bg_card" href="">Nâng
+								Cấp</a>
+						</div>
+						<div class="d-flex py-4">
+							<i class="fa fa-tag mt-1 text-success px-1" aria-hidden="true"></i>
+
+							<a class="text-decoration-none px-1 text-dark" href="">Nhập
+								Mã Mua Hàng</a>
+						</div>
+						<div class="d-flex py-4">
+							<i class="fa fa-history mt-1 text-success px-1"
+								aria-hidden="true"></i> <a
+								class="text-decoration-none text-dark" href="">Lịch Sử Nhận
+								Thưởng</a>
+						</div>
+					</div>
+				</div>
+				<br> <br>
+				<div>
+					<label for="" class="form-label form_header text-success">Cộng
+						Đồng</label>
+				</div>
+				<div class="card bg_card text-left rounded">
+
+					<div class="card-body d-flex ">
+						<i class="fa fa-pencil-square-o mt-1 text-success px-1 "
+							aria-hidden="true"></i> <a class="text-decoration-none text-dark"
+							href="/User/contact">Contact</a>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+    <div class="col-lg-1"></div>
+		<!-- card2 -->
+		<div class="col-lg-3 ">
+			<div>
+				<label for="" class="form-label form_header text-success">Giao
+					Diện</label>
+			</div>
+			<div class="card bg_card text-start mb-5">
+
+				<div class="card-body d-flex">
+					<label for="" class="form-label text-secondary">Giao Diện
+						Tối</label>
+					<div class="form-check form-switch ms-auto">
+						<input class="form-check-input" type="checkbox"
+							id="flexSwitchCheckDefault">
+					</div>
+				</div>
+			</div>
+			<div>
+				<label for="" class="form-label form_header text-success">Thông
+					Báo</label>
+			</div>
+			<div class="card bg_card row d-flex text-start">
+
+				<div class="card-body ">
+					<div class="d-flex">
+						<div class="flex-shrink-0">
+							<i class="fa fa-bell" aria-hidden="true"></i>
+						</div>
+						<div class="flex-grow-1">
+							<p>Nhắc Nhở Luyện Tập Hằng Ngày</p>
+							<div class="flex-row align-items-center">
+
+								<a href="" class="text-success text-decoration-none">Chưa
+									Thiết Lập</a>
+							</div>
+							<div class="d-flex">
+								<div class="flex-shrink-0">
+									<i class="fa fa-fire" aria-hidden="true"></i>
+								</div>
+								<div class="flex-grow-1 me-auto">
+									<div class="d-flex flex-row align-items-center">
+										<label for="" class="form-label text-secondary">Cảnh
+											Báo Mất Chuỗi Streak</label>
+										<div class="form-check form-switch ms-auto">
+											<input class="form-check-input" type="checkbox"
+												id="flexSwitchCheckChecked" checked>
+
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+
+							<div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    <div class="col-lg-1"></div>
+    <!-- card-3 -->
+    <div class="col-lg-3 ">
+			<div>
+				<label for="" class="form-label form_header text-success">Học Và Luyện Tập</label>
+			</div>
+			<div class="card bg_card text-start mb-5">
+
+				<div class="card-body">
+					<div class="d-flex py-4">
+            <i class="fa fa-heart text-success mt-1" aria-hidden="true"></i> <a
+              class="text-decoration-none text-dark bg_card" href="">Chọn Danh Mục Yêu Thích</a>
+          </div>
+          <div class="d-flex py-4">
+         
+			
+			<i class="fa fa-wheelchair-alt heart text-success mt-1" aria-hidden="true"></i>
+			
+            <a class="text-decoration-none px-1 text-dark" href="">Cấu Hình Luyện Tập</a>
+          </div>
+          <div class="d-flex py-4">
+            <i class="fa fa-history mt-1 text-success px-1"
+              aria-hidden="true"></i> <a
+              class="text-decoration-none text-dark" href="">Xem Hướng Dẫn</a>
+          </div>
+				</div>
+			</div>
+			<div>
+				<label for="" class="form-label form_header text-success">Thông
+					Báo</label>
+			</div>
+			<div class="card bg_card row d-flex text-start">
+
+				<div class="card-body ">
+					<div class="d-flex align-items-center mb-4">
+							<div class="flex-shrink-0">
+								<img
+									src="/assets/image/download1.jpg"
+									alt="Generic placeholder image"
+									class="img-fluid rounded-circle border border-dark border-3"
+									style="width: 70px;">
+							</div>
+							<div class="flex-grow-1 ms-3">
+								<div class="d-flex flex-row align-items-center mb-2">
+									<p class="mb-0 me-2">Tải App</p>
+
+								</div>
+								<div>
+									<a class="text-decoration-none text-success "
+							href="">Khả Dụng  Trên Cả Android Và IOS </a>
+								</div>
+							</div>
+
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- card3 -->
+<div id="editEmployeeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">						
+                        <h4 class="modal-title">Change Profile</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">					
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <textarea class="form-control" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="text" class="form-control" required>
+                        </div>					
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="submit" class="btn btn-info" value="Save">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+	<script>
+    const checkbox = document.getElementById('flexSwitchCheckDefault');
+        const body = document.body;
+        const body2=document.querySelectorAll('.bg_card');
+        const links = document.querySelectorAll('a');
+
+        checkbox.addEventListener('change', () => {
+            if (checkbox.checked) {
+                body.style.backgroundColor = 'gray';
+                
+                body2.forEach(element => {
+            element.style.backgroundColor = 'gray';
+            element.style.color ='white'; // Thay đổi màu nền của từng phần tử
+        });
+            } else {
+                body.style.backgroundColor = 'white'; // Thay đổi màu nền thành trắng
+                body2.forEach(element => {
+            element.style.backgroundColor = 'white'; // Thay đổi màu nền của từng phần tử
+            element.style.color ='black';
+        });
+            }
+        });
+  </script>
 		</div>
 
 

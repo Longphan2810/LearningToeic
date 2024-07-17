@@ -38,6 +38,7 @@ public class test1 {
 			double numberCheck = Math.round(Math.random());
 
 			if (numberCheck == 0) {
+				System.out.println("test");
 				System.out.println("==========================");
 				QuestionSelect questionCurrent = new QuestionSelect(vocabulary, lVoca);
 				System.out.println(questionCurrent.getVoca().getEnglishVerion());
