@@ -34,29 +34,24 @@
 		<div class="col-3"></div>
 		<div class="col-6 row g-3">
 			<h5>Chọn Từ</h5>
-			<h4 class="text-center my-3">(noun) Kết quả / Hậu quả</h4>
+			<h4 class="text-center my-3">(${voca.vocabularyType}) ${voca.vietnameseVersion}</h4>
 
 			<!-- Type Dap ann -->
 
-			<form action="" method="POST">
+			<form action="/Question/${id}" method="POST">
 				<input class="form-control form-control-lg" type="text"
 					placeholder="Nhập từ khóa" aria-label=".form-control-lg example">
 
 				<div class="row g-2 mt-2">
 
 					<c:forEach var="i" items="${output}">
-						<div class="col-1 mx-1 card text-center border border-success shadow bg-body-tertiary rounded">
-							<div class="card-body">
-								${i}
-							</div>
+						<div
+							class="col-1 mx-1 card text-center border border-success shadow bg-body-tertiary rounded">
+							<div class="card-body">${i}</div>
 						</div>
 
 					</c:forEach>
 				</div>
-
-
-
-
 				<input class="btn btn-success my-3 w-100 shadow rounded"
 					type="submit" value="Kiểm tra">
 			</form>

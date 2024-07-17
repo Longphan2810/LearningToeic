@@ -34,17 +34,22 @@
 		<div class="col-3"></div>
 		<div class="col-6 row g-3">
 			<h5>Chọn Từ</h5>
-			<h4 class="text-center my-3">(verb) Cân Nhắc/Đắng đo</h4>
-			<c:forEach var="i" begin="1" end="4">
+			<h4 class="text-center my-3">(${voca.vocabularyType}) ${voca.vietnameseVersion}</h4>
+			<c:forEach var="i" items="${listdapan}">
 				<div class="col-6 ">
 					<div class="card position-relative border-success shadow bg-body-tertiary rounded border-2 rounded-2" style="height: 10rem;">
 						<div
 							class="card-body text-center position-absolute top-50 start-50 translate-middle">
-							<h3>Dữ liệu</h3>
+							<h3>${i.englishVerion}</h3>
 						</div>
 					</div>
 				</div>
+				
+			
 			</c:forEach>
+			<form action="/Question/${id}" method="post">
+				<button type="submit" class="btn btn-success">Submit</button>
+			</form>
 
 
 

@@ -3,7 +3,7 @@
 <nav class="navbar">
 	<div class="container-fluid">
 
-		<a class="navbar-brand" href="#" style="color: black;"> <svg
+		<a href="/voca" class="navbar-brand" href="#" style="color: black;"> <svg 
 				xmlns="http://www.w3.org/2000/svg" width="18" height="18"
 				fill="currentColor" class="bi bi-arrow-left-square-fill mb-1"
 				viewBox="0 0 16 16">
