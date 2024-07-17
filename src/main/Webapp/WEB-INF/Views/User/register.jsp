@@ -10,7 +10,6 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <title>Fruit Store</title>
-
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -29,6 +28,8 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <link rel="stylesheet"
 	href="assets/vendors/mdi/css/materialdesignicons.min.css" />
+
+
 <style type="text/css">
 button:hover {
  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -51,10 +52,19 @@ a:hover {
         <div class="card shadow-2-strong" style="border-radius: 1rem;">
           <div class="card-body p-5 text-center">
 			
-            <h3 class="mb-5" style="color: #32CD32;">Sign in</h3>
-            <form:form class="m-3" action="/home#login" method="post" modelAttribute="nguoiDung">
+            <h3 class="mb-5" style="color: #32CD32;">Sign up</h3>
+            <form:form class="m-3" action="/home#register" method="post" modelAttribute="nguoiDung">
               <div data-mdb-input-init class="form-outline mb-4">
-              <form:input type="text" id="typeEmailX-2" class="form-control form-control-lg" path="username" />
+              <form:errors path="username" class="text-danger"></form:errors>
+              <label for="exampleInputUsername" class="form-label  text-light">Tên
+				Username</label><form:errors path="username" class="text-danger"></form:errors>
+			<form:input type="text" path="username" class="form-control bg-light text-dark" />
+			 <label style="color: #32CD32; class="form-label" for="typeUsernameX-2" >Username</label>
+              </div>
+              
+              <div data-mdb-input-init class="form-outline mb-4">
+              <form:errors path="email" class="text-danger"></form:errors>
+              <form:input type="email" id="typeEmailX-2" class="form-control form-control-lg" path="email" />
               <label style="color: #32CD32; class="form-label" for="typeEmailX-2">Email</label>
             </div>
 
@@ -63,13 +73,7 @@ a:hover {
               <label style="color: #32CD32; class="form-label" for="typePasswordX-2" >Password</label>
             </div>
 
-            <!-- Checkbox -->
-            <div class="form-check d-flex justify-content-start mb-4">
-              <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
-              <label class="form-check-label" for="form1Example3"> Remember password </label>
-            </div>
-
-            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-lg btn-block" type="submit">Login</button>
+            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-lg btn-block" type="submit">Register</button>
             <a class="btn btn-danger" href="/home">Quay lại</a>
             </form:form>
           </div>
@@ -79,5 +83,7 @@ a:hover {
     </div>
   </div>
 </section>
+	
+
 </body>
 </html>

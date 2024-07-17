@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.demo.model.User;
+
 @Controller
 public class UserController {
 
@@ -59,12 +61,10 @@ public class UserController {
 
 
 	@RequestMapping("/home")
-	public String requestHome() {
+	public String requestHome(Model model) {
+		User user = new User();
+		model.addAttribute("nguoiDung",user);
 		return "User/home2";
-	}
-	@RequestMapping("/login")
-	public String login() {
-		return "User/Login";
 	}
 	@RequestMapping("/home1")
 	public String requestHome1() {
@@ -75,4 +75,17 @@ public class UserController {
 		return "User/Account";
 	}
 
+	
+	@RequestMapping("/login")
+	public String requestlogin(Model model) {
+		User user = new User();
+		model.addAttribute("nguoiDung",user);
+		return "User/Login";
+	}
+	@RequestMapping("/register")
+	public String requestregister(Model model) {
+		User user = new User();
+		model.addAttribute("nguoiDung",user);
+		return "User/register";
+	}
 }

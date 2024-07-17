@@ -81,12 +81,6 @@ body {
                                 <input type="email" class="form-control" id="inputEmail" required>
                             </div>
                         </div>
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                <label for="inputPhone">Phone</label>
-                                <input type="text" class="form-control" id="inputPhone" required>
-                            </div>
-                        </div>
                     </div>            
                     <div class="form-group">
                         <label for="inputSubject">Subject</label>
@@ -96,8 +90,12 @@ body {
                         <label for="inputMessage">Message</label>
                         <textarea class="form-control" id="inputMessage" rows="5" required></textarea>
                     </div>
+                    
                     <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Send</button>
+                
                 </form>
+                <br>	
+                <a href="/home" class="mt-3"><button class="btn btn-primary"><i class="fa"></i> Back to home</button></a>
             </div>
         </div>
     </div>
