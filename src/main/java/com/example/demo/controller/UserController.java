@@ -62,7 +62,14 @@ public class UserController {
 	public String requestHome() {
 		return "User/home2";
 	}
-
+	@RequestMapping("/login")
+	public String login() {
+		return "User/Login";
+	}
+	@RequestMapping("/home1")
+	public String requestHome1() {
+		return "User/home";
+	}
 	@RequestMapping("/account")
 	public String requestaccount() {
 		return "User/Account";

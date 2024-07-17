@@ -150,7 +150,7 @@
 					<div class="card-body d-flex ">
 						<i class="fa fa-pencil-square-o mt-1 text-success px-1 "
 							aria-hidden="true"></i> <a class="text-decoration-none text-dark"
-							href="/User/contact">Contact</a>
+							href="contact">Contact</a>
 					</div>
 				</div>
 			</div>
@@ -160,21 +160,8 @@
     <div class="col-lg-1"></div>
 		<!-- card2 -->
 		<div class="col-lg-3 ">
-			<div>
-				<label for="" class="form-label form_header text-success">Giao
-					Diện</label>
-			</div>
-			<div class="card bg_card text-start mb-5">
-
-				<div class="card-body d-flex">
-					<label for="" class="form-label text-secondary">Giao Diện
-						Tối</label>
-					<div class="form-check form-switch ms-auto">
-						<input class="form-check-input" type="checkbox"
-							id="flexSwitchCheckDefault">
-					</div>
-				</div>
-			</div>
+			
+			
 			<div>
 				<label for="" class="form-label form_header text-success">Thông
 					Báo</label>
@@ -311,29 +298,7 @@
             </div>
         </div>
     </div>
-	<script>
-    const checkbox = document.getElementById('flexSwitchCheckDefault');
-        const body = document.body;
-        const body2=document.querySelectorAll('.bg_card');
-        const links = document.querySelectorAll('a');
-
-        checkbox.addEventListener('change', () => {
-            if (checkbox.checked) {
-                body.style.backgroundColor = 'gray';
-                
-                body2.forEach(element => {
-            element.style.backgroundColor = 'gray';
-            element.style.color ='white'; // Thay đổi màu nền của từng phần tử
-        });
-            } else {
-                body.style.backgroundColor = 'white'; // Thay đổi màu nền thành trắng
-                body2.forEach(element => {
-            element.style.backgroundColor = 'white'; // Thay đổi màu nền của từng phần tử
-            element.style.color ='black';
-        });
-            }
-        });
-  </script>
+	
 		</div>
 
 
