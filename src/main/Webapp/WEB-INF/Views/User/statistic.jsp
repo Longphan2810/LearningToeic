@@ -37,6 +37,10 @@
 	<div class="row container-fluid mx-auto">
 		<%-- side bar --%>
 		<div class=" border-end col-1 " style="height: 700px;">
+			<div class=""  >
+					<img style="width:90px" class="img-logo mt-3" alt="img/favicon.png"
+						src="./assets/image/favicon.png"> 
+				</div>
 			<a type="button" href="/home" class="btn p-4  "> <svg
 					xmlns="http://www.w3.org/2000/svg" width="33" height="33"
 					fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">

@@ -18,74 +18,26 @@
 	crossorigin="anonymous"></script>
 
 <style type="text/css">
-.acctiveCustom {
-	color: rgb(25, 145, 71);
-}
 
-.btn:hover {
-	background: rgba(96, 240, 77, 0.5);
-}
-
-.content {
-	height: 100vh;
-	overflow: auto;
-	border: 0px solid #ccc;
-	scroll-behavior: smooth;
-}
-
-.scrollbar {
-	overflow-y: scroll;
-	scrollbar-width: thin;
-}
 
 ::-webkit-scrollbar {
 	width: 12px;
 }
 
-::-webkit-scrollbar-thumb {
-	background-color: rgba(255, 255, 255, 0.99);
-}
 
-::-webkit-scrollbar-track {
-	background-color: rgba(255, 255, 255, 0.99);
+.acctiveCustom{
+	color: rgba(25, 145, 71);
 }
-
-.background {
-	background-image: url("./assets/image/bg-img.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	width: 100%;
-	height: 100vh;
-}
-
-.background1 {
-	background-image: url("./assets/image/bg-img1.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	width: 100%;
-	height: 100vh;
-}
-
-.background2 {
-	background-image: url("./assets/image/bg-img2.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	width: 100%;
-	height: 100vh;
-}
-
 .navbar {
+<<<<<<< HEAD
 	background-color: rgb(29, 131, 9);
+=======
+	background: rgba(25, 145, 71);
+>>>>>>> branch 'main' of https://github.com/Longphan2810/LearningToeic.git
 	height: 9vh
 }
 
-.img-logo {
-	width: 13%;
-	height: 13%;
-}
+
 
 .btn-voca:hover {
 	background: rgba(96, 240, 77, 0.5);
@@ -107,6 +59,10 @@ supports ((position:-webkit-sticky) or (position:sticky)) { .sticky-top
 	<div class="row container-fluid mx-auto">
 		<%-- side bar --%>
 		<div class=" border-end col-1 " style="height: 700px;">
+		<div class=""  >
+					<img style="width:90px" class="img-logo mt-3" alt="img/favicon.png"
+						src="./assets/image/favicon.png"> 
+				</div>
 			<a type="button" href="/home"
 				class="text-decoration-none p-4 acctiveCustom "> <svg
 					xmlns="http://www.w3.org/2000/svg" width="33" height="33"
@@ -150,25 +106,16 @@ supports ((position:-webkit-sticky) or (position:sticky)) { .sticky-top
 		<div class=" col-11">
 			<div class="main-panel content">
 				<div class=" bg-light">
-					<div class="background border-bottom  border-dark" id="home">
+					<div class="background border-bottom " id="home">
 
-						<nav class="container-fuint navbar sticky-top navbar-elixir">
+						<nav class="container-fuint navbar sticky-top navbar-elixir py-3">
 							<div class="col-3">
 								<div class="d-flex">
-									<img class="img-logo ms-3" alt="img/favicon.png"
-										src="./assets/image/favicon.png"> <a
-										class="ms-5 text-decoration-none" href="#">Trang chủ</a> <a
-										class="ms-5 text-decoration-none" href="#footer">Liên hệ</a>
-								</div>
+									 <span class="text-white h4 ms-3"> Neko Vocab </span>
+								</div> 
 
 							</div>
-							<div class="col-5">
-								<form class="d-flex" role="search">
-									<input class="form-control me-2" type="search"
-										placeholder="Search" aria-label="Search">
-									<button class="btn btn-success" type="submit">Search</button>
-								</form>
-							</div>
+						
 							<div class="col-3 mb-3">
 								<a class="ms-5 text-decoration-none btn btn-sm btn-primary"
 									href="/login">Đăng nhập</a> <a
@@ -271,8 +218,8 @@ supports ((position:-webkit-sticky) or (position:sticky)) { .sticky-top
 										<span class="visually-hidden">Next</span>
 									</button>
 								</div>
-								<div class="col-12 m-2">
-									<div class="card" style="width: 40rem;">
+								<div class="col-11 m-2">
+									<div class="card" >
 										<div class="card-body">
 											<h5 class="card-title">introduce about website</h5>
 											<h6 class="card-subtitle mb-2 text-body-secondary">Neko
@@ -290,6 +237,7 @@ supports ((position:-webkit-sticky) or (position:sticky)) { .sticky-top
 						</div>
 					</div>
 				</div>
+<<<<<<< HEAD
 				<div class="border-bottom" id="footer">
 					<div class="d-flex mt-3">
 						<div class=" col-3 ">
@@ -328,6 +276,11 @@ supports ((position:-webkit-sticky) or (position:sticky)) { .sticky-top
 						</div>
 					</div>
 				</div>
+=======
+		
+			
+				
+>>>>>>> branch 'main' of https://github.com/Longphan2810/LearningToeic.git
 			</div>
 
 
