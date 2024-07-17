@@ -54,7 +54,8 @@ a:hover {
             <h3 class="mb-5" style="color: #32CD32;">Sign in</h3>
             <form:form class="m-3" action="/home#login" method="post" modelAttribute="nguoiDung">
               <div data-mdb-input-init class="form-outline mb-4">
-              <form:input type="text" id="typeEmailX-2" class="form-control form-control-lg" path="username" />
+               <form:errors path="email" class="text-danger"></form:errors>
+              <form:input type="email" id="typeEmailX-2" class="form-control form-control-lg" path="email" />
               <label style="color: #32CD32; class="form-label" for="typeEmailX-2">Email</label>
             </div>
 

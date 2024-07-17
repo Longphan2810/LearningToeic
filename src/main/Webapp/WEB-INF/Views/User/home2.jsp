@@ -29,11 +29,8 @@
 	color: rgba(25, 145, 71);
 }
 .navbar {
-<<<<<<< HEAD
 	background-color: rgb(29, 131, 9);
-=======
-	background: rgba(25, 145, 71);
->>>>>>> branch 'main' of https://github.com/Longphan2810/LearningToeic.git
+
 	height: 9vh
 }
 
@@ -237,7 +234,6 @@ supports ((position:-webkit-sticky) or (position:sticky)) { .sticky-top
 						</div>
 					</div>
 				</div>
-<<<<<<< HEAD
 				<div class="border-bottom" id="footer">
 					<div class="d-flex mt-3">
 						<div class=" col-3 ">
