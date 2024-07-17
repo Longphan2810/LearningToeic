@@ -10,7 +10,6 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <title>Fruit Store</title>
-
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -29,8 +28,10 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <link rel="stylesheet"
 	href="assets/vendors/mdi/css/materialdesignicons.min.css" />
+
+
 <style type="text/css">
-.background-login{
+.background-register{
 	background: rgba(68, 164, 209, 0.5);
 }
 </style>
@@ -38,35 +39,36 @@
 <body>
 
 
-	<div class="m-auto col-6 background-login rounded ">
-		<h2 class="text-center text-success">Đăng Nhập</h2>
-		<form:form class="m-3" action="/home#login" method="post" modelAttribute="nguoiDung">
-			<div class="mb-3 ">
-				<label for="exampleInputEmail1" class="form-label  text-light">Tên
-				tài khoản</label>
+	<div class="m-auto col-6 background-register rounded">
+		<h2 class="text-center mt-3 text-success">Đăng Ký</h2>
+
+		<form:form class="m-5" action="/home#register" method="post"
+			modelAttribute="nguoiDung" enctype="multipart/form-data">
+
+			<label for="exampleInputEmail1" class="form-label  text-light">Tên
+				tài khoản</label><form:errors path="username" class="text-danger"></form:errors>
 			<form:input type="text" path="username"
 				class="form-control bg-light text-dark" />
+			
+			
+			<label for="exampleInputEmail1" class="form-label  text-light">Email</label><form:errors path="email" class="text-danger"></form:errors>
+			<form:input type="email" path="email" class="form-control bg-light text-dark" />
 
-			</div>
-			<div class="mb-3">
-				<label for="exampleInputEmail1" class="form-label  text-light">Mật
-				khẩu</label>
+			<label for="exampleInputEmail1" class="form-label  text-light">Mật
+				khẩu</label><form:errors path="password" class="text-danger"></form:errors>
 			<form:password path="password" class="form-control bg-light text-dark" />
 
-			</div>
-			<div class="mb-3 form-check">
-				<input type="checkbox" class="form-check-input" id="exampleCheck1">
-				<label class="form-check-label text-light" for="exampleCheck1">Nhớ mật
-					khẩu</label>
-			</div>
-			<div class="d-flex justify-content-evenly ">
-				<a class="btn btn-danger" href="home">Quay lại</a>
-				<button class="btn btn-primary">Đăng Nhập</button>
-			</div>
+	
 
+
+
+
+			<div class="d-flex justify-content-evenly mt-3">
+			<a class="btn btn-danger" href="home">Quay lại</a>
+				<button class="btn btn-primary ">Đăng Ký</button>
+			</div>
 		</form:form>
 	</div>
-
 
 
 </body>
