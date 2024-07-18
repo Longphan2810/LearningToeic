@@ -32,57 +32,84 @@
 
 <style type="text/css">
 button:hover {
- box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
+
 a:hover {
- box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 </style>
 </head>
 <body>
-<section class="vh-100" style="background-color: rgb(244, 247, 252);">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-      <div class="d-flex justify-content-center align-items-center mb-2">
-			<h2 style="color: #32CD32;">NEKO</h2>
-			<img alt="" src="/assets/image/logo.jpg" style="max-width: 50px">
-			<h2 style="color: #32CD32;">VOCAB</h2>
+	<section class="vh-100" style="background-color: rgb(244, 247, 252);">
+		<div class="container py-5 h-100">
+			<div
+				class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+				<div class="d-flex justify-content-center align-items-center mb-2">
+					<img alt="" src="/assets/image/logo.jpg" style="max-width: 100px"> 
+					</div>
+					<div class="d-flex justify-content-center align-items-center mb-2">
+
+						<h2 style="color: #32CD32;">NEKO</h2>	
+						<h2 style="color: #32CD32;">VOCAB</h2>
+					</div>
+					<div class="card shadow-2-strong" style="border-radius: 1rem;">
+						<div class="card-body p-5 text-center">
+
+							<h3 class="mb-5" style="color: #32CD32;">Sign up</h3>
+							<form class="m-3" action="/register" method="post"
+								>
+								<div data-mdb-input-init class="form-outline mb-4">
+									
+									<label for="exampleInputUsername"
+										class="form-label  text-light">Tên Username</label>
+									
+									<input type="text" required="true"  name="username"
+										class="form-control bg-light text-dark" />
+									<label style="color: #32CD32;"
+										form-label" for="typeUsernameX-2">Username</label>
+								</div>
+
+								<div data-mdb-input-init class="form-outline mb-4">
+									
+									<input type="email" id="typeEmailX-2"
+										class="form-control form-control-lg" name="email" />
+									<label style="color: #32CD32;" form-label" for="typeEmailX-2">Email</label>
+								</div>
+
+								<div data-mdb-input-init class="form-outline mb-4">
+									<input type="password" required="true" name="password"
+										id="typePasswordX-2" class="form-control form-control-lg" />
+									<label style="color: #32CD32;"
+										form-label" for="typePasswordX-2">Password</label>
+								</div>
+
+								<button data-mdb-button-init data-mdb-ripple-init
+									class="btn btn-success btn-lg btn-block" type="submit">Register</button>
+								<a class="btn btn-danger" href="/home">Quay lại</a>
+							</form>
+						</div>
+					</div>
+
+				</div>
 			</div>
-        <div class="card shadow-2-strong" style="border-radius: 1rem;">
-          <div class="card-body p-5 text-center">
-			
-            <h3 class="mb-5" style="color: #32CD32;">Sign up</h3>
-            <form:form class="m-3" action="/home#register" method="post" modelAttribute="nguoiDung">
-              <div data-mdb-input-init class="form-outline mb-4">
-              <form:errors path="username" class="text-danger"></form:errors>
-              <label for="exampleInputUsername" class="form-label  text-light">Tên
-				Username</label><form:errors path="username" class="text-danger"></form:errors>
-			<form:input type="text" path="username" class="form-control bg-light text-dark" />
-			 <label style="color: #32CD32; class="form-label" for="typeUsernameX-2" >Username</label>
-              </div>
-              
-              <div data-mdb-input-init class="form-outline mb-4">
-              <form:errors path="email" class="text-danger"></form:errors>
-              <form:input type="email" id="typeEmailX-2" class="form-control form-control-lg" path="email" />
-              <label style="color: #32CD32; class="form-label" for="typeEmailX-2">Email</label>
-            </div>
+		</div>
+	</section>
+<!--  thong bao -->
 
-            <div data-mdb-input-init class="form-outline mb-4">
-            <form:input type="password" path="password" id="typePasswordX-2" class="form-control form-control-lg"/>
-              <label style="color: #32CD32; class="form-label" for="typePasswordX-2" >Password</label>
-            </div>
+	<div class="toast-container  position-fixed bottom-0 end-0 p-3">
+		<div id="liveToast" class="toast ${message!=null?'show':''}"
+			role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="toast-header">
+				<strong class="me-auto">Thông báo</strong>
 
-            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-lg btn-block" type="submit">Register</button>
-            <a class="btn btn-danger" href="/home">Quay lại</a>
-            </form:form>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-</section>
+				<button type="button" class="btn-close" data-bs-dismiss="toast"
+					aria-label="Close"></button>
+			</div>
+			<div class="toast-body">${message}</div>
+		</div>
+	</div>
 	
 
 </body>
