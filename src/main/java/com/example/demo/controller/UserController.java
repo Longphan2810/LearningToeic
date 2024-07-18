@@ -60,16 +60,19 @@ public class UserController {
 	}
 
 
-	@RequestMapping("/home")
+	@RequestMapping("/")
 	public String requestHome(Model model) {
 		User user = new User();
 		model.addAttribute("nguoiDung",user);
 		return "User/home2";
 	}
-	@RequestMapping("/home1")
-	public String requestHome1() {
-		return "User/home";
+	@RequestMapping("/home")
+	public String requestHome2(Model model) {
+		User user = new User();
+		model.addAttribute("nguoiDung",user);
+		return "User/home2";
 	}
+
 	@RequestMapping("/account")
 	public String requestaccount() {
 		return "User/Account";

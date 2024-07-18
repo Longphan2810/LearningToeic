@@ -1,6 +1,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -112,13 +113,21 @@ supports ((position:-webkit-sticky) or (position:sticky)) { .sticky-top
 								</div> 
 
 							</div>
-						
+							<c:if test="${sessionScope.userCurrent==null }">
 							<div class="col-3 mb-3">
 								<a class="ms-5 text-decoration-none btn btn-sm btn-primary"
 									href="/login">Đăng nhập</a> <a
 									class="ms-5 text-decoration-none btn btn-sm btn-success"
 									href="/register">Đăng ký</a>
 							</div>
+							</c:if>
+								<c:if test="${sessionScope.userCurrent!=null }">
+							<div class="col-3 mb-3">
+								<a class="ms-5 text-decoration-none btn btn-sm btn-primary"
+									href="/logout">Đăng xuất</a> 
+							</div>
+							</c:if>
+							
 
 
 						</nav>
