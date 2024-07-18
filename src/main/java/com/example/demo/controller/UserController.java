@@ -47,15 +47,37 @@ public class UserController {
 	public String requestLayout() {
 		return "User/layout";
 	}
+
 	int lastNumber;
+
 	@PostMapping("/Question/{id}")
-	public String ques2(@PathVariable("id") Optional<Long> id, Model model) {
+	public String ques2(@PathVariable("id") Optional<Long> id, Model model,@RequestParam("vocaId") Optional<Long> vocaid,
+			@RequestParam("choice") String luachon
+			) {
 		
+		Optional<Vocabulary> voca = daoVoca.findById(vocaid.orElse(0l));
+		Vocabulary cauhoi = voca.orElse(null);
+		System.out.println(luachon);
+		if (cauhoi == null) {
+			
+		}else {
+			if (cauhoi.getEnglishVerion().equals(luachon)) {
+				
+			}else {
+				
+			}
+			return "redirect:" + id.orElse(0L);
+		}
+		   
 		
+		return "redirect:" + id.orElse(0L);
+	}
+
+	@RequestMapping("/Question/{id}")
+	public String ques(@PathVariable("id") Optional<Long> id, Model model) {
 		// tim chuyen de theo id
 		Optional<Thematic> t = daoThe.findById(id.orElse(0L));
-		
-		
+
 		// tim list tu vung theo chuyen de
 		List<Vocabulary> listVoca = daoVoca.FindAllByThematic(t.orElse(null));
 		model.addAttribute("id", id.orElse(0L));
@@ -66,14 +88,14 @@ public class UserController {
 		do {
 			number = rd.nextInt(12);
 		} while (number == lastNumber);
-		
+
 		lastNumber = number;
 		model.addAttribute("voca", listVoca.get(number));
-		
-		
+
 		// add dap an vao format
-		Vocabulary dapan = listVoca.get(number);//dap an temp 1
-		String input = listVoca.get(number).getEnglishVerion();//dap an temp 2
+		Vocabulary dapan = listVoca.get(number);// dap an temp 1
+		String input = listVoca.get(number).getEnglishVerion();// dap an temp 2
+		
 		listVoca.remove(number);
 
 		// random temp
@@ -93,35 +115,10 @@ public class UserController {
 			List<Vocabulary> listdapan = listVoca.subList(0, 3);
 			listdapan.add(dapan);
 			Collections.shuffle(listdapan);
+			
 			model.addAttribute("listdapan", listdapan);
 			return "User/QuestionType1";
 		}
-
-	}
-
-	@RequestMapping("/Question/{id}")
-	public String ques(@PathVariable("id") Optional<Long> id, Model model) {
-		// tim chuyen de theo id
-		Optional<Thematic> t = daoThe.findById(id.orElse(0L));
-		// tim tu vung theo chuyen de
-		List<Vocabulary> listVoca = daoVoca.FindAllByThematic(t.orElse(null));
-		model.addAttribute("id", id.orElse(0L));
-		
-		// add cau hoi
-		Random rd = new Random();
-		int number = rd.nextInt(12);
-		model.addAttribute("voca", listVoca.get(number));
-
-		// add dap an
-		Vocabulary dapan = listVoca.get(number);//dap an temp 1
-		listVoca.remove(number);
-		Collections.shuffle(listVoca);
-		List<Vocabulary> listdapan = listVoca.subList(0, 3);
-		listdapan.add(dapan);
-		
-		model.addAttribute("listdapan", listdapan);
-
-		return "User/QuestionType1";
 	}
 
 	@RequestMapping("/Question2")

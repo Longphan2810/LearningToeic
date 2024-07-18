@@ -39,7 +39,9 @@
 			<!-- Type Dap ann -->
 
 			<form action="/Question/${id}" method="POST">
-				<input class="form-control form-control-lg" type="text"
+			<input type="hidden" name="vocaId"
+					value="${voca.vocabularyId}" />
+				<input class="form-control form-control-lg" type="text" name="choice"
 					placeholder="Nhập từ khóa" aria-label=".form-control-lg example">
 
 				<div class="row g-2 mt-2">
