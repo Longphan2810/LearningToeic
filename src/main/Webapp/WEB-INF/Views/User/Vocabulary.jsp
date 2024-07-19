@@ -92,7 +92,7 @@
 					
 					<div class=" my-3 col-4 chudehoc">
 						<div class="card" style="width: 100%">
-							<img src="./assets/image/download.png" class="card-img-top"
+							<img src="./assets/image/${i.thematicsImage }" class="card-img-top"
 								style="width: 100% s; height: 160px" alt="...">
 							<div class="card-body">
 								<h5 class="card-title">Chủ Đề : ${i.thematicsName} </h5>
