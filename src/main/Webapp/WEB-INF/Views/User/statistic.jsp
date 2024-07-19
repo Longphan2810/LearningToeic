@@ -1,6 +1,8 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+<%@ taglib uri="jakarta.tags.core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,10 +39,10 @@
 	<div class="row container-fluid mx-auto">
 		<%-- side bar --%>
 		<div class=" border-end col-1 " style="height: 700px;">
-			<div class=""  >
-					<img style="width:90px" class="img-logo mt-3" alt="img/favicon.png"
-						src="./assets/image/favicon.png"> 
-				</div>
+			<div class="">
+				<img style="width: 90px" class="img-logo mt-3" alt="img/favicon.png"
+					src="./assets/image/favicon.png">
+			</div>
 			<a type="button" href="/home" class="btn p-4  "> <svg
 					xmlns="http://www.w3.org/2000/svg" width="33" height="33"
 					fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
@@ -84,7 +86,9 @@
 				<div class="col-5">
 					<div class="d-flex justify-content-evenly ">
 						<div class="m-3 col-6 bg-success rounded">
-							<div class="m-3 bg-light col-1 text-center rounded">0</div>
+							<div class="m-3 bg-light col-1 text-center rounded">			
+								${vocabActive}	
+							</div>
 							<div class="d-flex justify-content-between">
 								<h5 class="text-light ms-3">Word learned</h5>
 
@@ -99,9 +103,9 @@
 
 						</div>
 						<div class="m-3  col-6 bg-primary rounded">
-							<div class="m-3 bg-light col-1 text-center rounded">0</div>
+							<div class="m-3 pe-2 bg-light col-2 text-center rounded">${vocabUnlearned}</div>
 							<div class="d-flex justify-content-between">
-								<h5 class="text-light ms-3">Word learned</h5>
+								<h5 class="text-light ms-3">unlearned words</h5>
 
 								<a class="text-light me-3"><svg
 										xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -130,7 +134,7 @@
 													d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15" />
 							</svg></a>
 										<div>
-											<h6 class="m-1">1 Day</h6>
+											<h6 class="m-1">3 Day</h6>
 											<p class="">Current streak</p>
 										</div>
 
@@ -148,7 +152,7 @@
 													d="M6.5 0a.5.5 0 0 0 0 1H7v1.07A7.001 7.001 0 0 0 8 16a7 7 0 0 0 5.29-11.584l.013-.012.354-.354.353.354a.5.5 0 1 0 .707-.707l-1.414-1.415a.5.5 0 1 0-.707.707l.354.354-.354.354-.012.012A6.97 6.97 0 0 0 9 2.071V1h.5a.5.5 0 0 0 0-1zm2 5.6V9a.5.5 0 0 1-.5.5H4.5a.5.5 0 0 1 0-1h3V5.6a.5.5 0 1 1 1 0" />
 						</svg></a>
 										<div>
-											<h6 class="m-1">1 Day</h6>
+											<h6 class="m-1">6 Day</h6>
 											<p class="">Longest streak</p>
 										</div>
 									</div>
@@ -198,24 +202,19 @@
 		document.addEventListener('DOMContentLoaded', function() {
 
 			var areaData = {
-				labels : [ "Sum", "Mon", "Tue", "Web", "Thu", "Fri", "Sat", "ToDay" ],
+				labels : [ "Sum", "Mon", "Tue", "Web", "Thu", "Fri", "Sat",
+						"ToDay" ],
 				datasets : [ {
 					label : '# of Votes',
 					data : [ 12, 19, 3, 5, 2 ],
-					backgroundColor: [
-	                    'rgba(75, 192, 75, 0.2)', 
-	                    'rgba(173, 216, 230, 0.2)', 
-	                    'rgba(75, 192, 75, 0.2)',  
-	                    'rgba(173, 216, 230, 0.2)', 
-	                    'rgba(75, 192, 75, 0.2)' 
-	                ],
-	                borderColor: [
-	                    'rgba(75, 192, 75, 1)', 
-	                    'rgba(173, 216, 230, 1)', 
-	                    'rgba(75, 192, 75, 1)', 
-	                    'rgba(173, 216, 230, 1)',  
-	                    'rgba(75, 192, 75, 1)'  
-	                ],
+					backgroundColor : [ 'rgba(75, 192, 75, 0.2)',
+							'rgba(173, 216, 230, 0.2)',
+							'rgba(75, 192, 75, 0.2)',
+							'rgba(173, 216, 230, 0.2)',
+							'rgba(75, 192, 75, 0.2)' ],
+					borderColor : [ 'rgba(75, 192, 75, 1)',
+							'rgba(173, 216, 230, 1)', 'rgba(75, 192, 75, 1)',
+							'rgba(173, 216, 230, 1)', 'rgba(75, 192, 75, 1)' ],
 					borderWidth : 1,
 					fill : true
 				} ]

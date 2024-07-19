@@ -17,13 +17,10 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 	crossorigin="anonymous"></script>
-
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css"
+	rel="stylesheet">
 <style type="text/css">
-
-
-::-webkit-scrollbar {
-	width: 12px;
-}
 
 
 .acctiveCustom{
@@ -36,7 +33,6 @@
 }
 
 
-
 .btn-voca:hover {
 	background: rgba(96, 240, 77, 0.5);
 }
@@ -47,6 +43,29 @@ supports ((position:-webkit-sticky) or (position:sticky)) { .sticky-top
 	position: sticky;
 	top: 0;
 	z-index: 1020;
+}
+	 .content {
+	height: 100vh;
+	overflow: auto;
+	border: 0px solid #ccc;
+}
+
+.scrollbar {
+	overflow-y: scroll;
+	scrollbar-width: thin;
+	
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 255, 255, 0.99);
+}
+
+::-webkit-scrollbar-track {
+	background-color: rgba(255, 255, 255, 0.99);
 }
 }
 </style>
@@ -101,7 +120,7 @@ supports ((position:-webkit-sticky) or (position:sticky)) { .sticky-top
 
 		</div>
 		<%-- Content --%>
-		<div class=" col-11">
+		<div class="col-11">
 			<div class="main-panel content">
 				<div class=" bg-light">
 					<div class="background border-bottom " id="home">
@@ -281,11 +300,6 @@ supports ((position:-webkit-sticky) or (position:sticky)) { .sticky-top
 						</div>
 					</div>
 				</div>
-=======
-		
-			
-				
->>>>>>> branch 'main' of https://github.com/Longphan2810/LearningToeic.git
 			</div>
 
 
@@ -294,7 +308,6 @@ supports ((position:-webkit-sticky) or (position:sticky)) { .sticky-top
 		</div>
 
 
-	</div>
 	</div>
 </body>
 </html>

@@ -92,11 +92,15 @@
 					
 					<div class=" my-3 col-4 chudehoc">
 						<div class="card" style="width: 100%">
-							<img src="./assets/image/download.png" class="card-img-top"
+
+							<img src="./assets/image/${i.image}" class="card-img-top"
+
+				
+
 								style="width: 100% s; height: 160px" alt="...">
 							<div class="card-body">
 								<h5 class="card-title">Chủ Đề : ${i.thematicsName} </h5>
-								<p class="card-text">Đã học : 1/${i.vocabularies.size()} từ vựng</p>
+								<p class="card-text">Đã học : ${i.learnedVocabularyCount}/${i.vocabularies.size()} từ vựng</p>
 								<div class="w-100 text-center">
 									<form action="" method="get">
 										<button formaction="/Question/${i.thematicsId}" type="submit"

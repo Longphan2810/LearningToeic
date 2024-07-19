@@ -66,16 +66,21 @@
 			<div id="frame" class="col-12 row g-2 p-4 shadow-lg d-none mt-2">
 
 				<div class="col-12 ">
-					<h3>(${voca.vocabularyType}) ${voca.vietnameseVersion} :
-						${voca.englishVerion}</h3>
-					<form action="/Question/${id}">
-						<input class="btn btn-success" type="submit" value="Countinue">
-					</form>
-
-				</div>
+				<h3>(${voca.vocabularyType}) ${voca.vietnameseVersion} :
+					${voca.englishVerion}</h3>
+				<form action="/Question/${id}" method="post">
+					<input type="hidden" name="vocaId" value="${voca.vocabularyId}" />
+					<input type="hidden" name="choice" value="${voca.englishVerion}" />
+					<input class="btn btn-primary" type="submit" value="Continue">
+				</form>
 
 			</div>
 
+<<<<<<< HEAD
+			</div>
+
+=======
+>>>>>>> refs/remotes/origin/main
 		</div>
 
 
@@ -89,7 +94,7 @@
 	
 		function chonchu(button){
 			
-			var traloi =   document.getElementById("inputChoice").value;
+			var traloi =  document.getElementById("inputChoice").value;
 			var bien = button.value;
 			document.getElementById("inputChoice").value = traloi + bien;
 			console.log(bien);
