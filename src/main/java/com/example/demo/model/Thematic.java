@@ -27,6 +27,8 @@ public class Thematic {
     private Long thematicsId;
 	@Column(columnDefinition = "nvarchar(100)")
     private String thematicsName;
+	@Column(columnDefinition = "nvarchar(250)")
+    private String image;
 	@OneToMany(mappedBy = "thematic")
 	List<Vocabulary> vocabularies;
 	
