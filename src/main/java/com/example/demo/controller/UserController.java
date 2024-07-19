@@ -27,6 +27,8 @@ import com.example.demo.service.impl.SessionService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.websocket.server.PathParam;
 
+import com.example.demo.model.User;
+
 @Controller
 public class UserController {
 	@Autowired
@@ -51,27 +53,27 @@ public class UserController {
 	int lastNumber;
 
 	@PostMapping("/Question/{id}")
-	public String ques2(@PathVariable("id") Optional<Long> id, Model model,@RequestParam("vocaId") Optional<Long> vocaid,
-			@RequestParam("choice") String luachon
-			) {
-		
+	public String ques2(@PathVariable("id") Optional<Long> id, Model model,
+			@RequestParam("vocaId") Optional<Long> vocaid, @RequestParam("choice") String luachon) {
+
 		Optional<Vocabulary> voca = daoVoca.findById(vocaid.orElse(0l));
 		Vocabulary cauhoi = voca.orElse(null);
 		System.out.println(luachon);
 		if (cauhoi == null) {
-			
-		}else {
+
+		} else {
 			if (cauhoi.getEnglishVerion().equals(luachon)) {
-				
-			}else {
-				
+
+			} else {
+
 			}
 			return "redirect:" + id.orElse(0L);
 		}
-		   
-		
+
 		return "redirect:" + id.orElse(0L);
 	}
+
+	
 
 	@RequestMapping("/Question/{id}")
 	public String ques(@PathVariable("id") Optional<Long> id, Model model) {
@@ -95,7 +97,7 @@ public class UserController {
 		// add dap an vao format
 		Vocabulary dapan = listVoca.get(number);// dap an temp 1
 		String input = listVoca.get(number).getEnglishVerion();// dap an temp 2
-		
+
 		listVoca.remove(number);
 
 		// random temp
@@ -115,7 +117,7 @@ public class UserController {
 			List<Vocabulary> listdapan = listVoca.subList(0, 3);
 			listdapan.add(dapan);
 			Collections.shuffle(listdapan);
-			
+
 			model.addAttribute("listdapan", listdapan);
 			return "User/QuestionType1";
 		}
@@ -158,8 +160,17 @@ public class UserController {
 		return "User/statistic";
 	}
 
+	@RequestMapping("/")
+	public String requestHome(Model model) {
+		User user = new User();
+		model.addAttribute("nguoiDung", user);
+		return "User/home2";
+	}
+
 	@RequestMapping("/home")
-	public String requestHome() {
+	public String requestHome2(Model model) {
+		User user = new User();
+		model.addAttribute("nguoiDung", user);
 		return "User/home2";
 	}
 
@@ -168,4 +179,17 @@ public class UserController {
 		return "User/Account";
 	}
 
+	@RequestMapping("/login")
+	public String requestlogin(Model model) {
+		User user = new User();
+		model.addAttribute("nguoiDung", user);
+		return "User/Login";
+	}
+
+	@RequestMapping("/register")
+	public String requestregister(Model model) {
+		User user = new User();
+		model.addAttribute("nguoiDung", user);
+		return "User/register";
+	}
 }

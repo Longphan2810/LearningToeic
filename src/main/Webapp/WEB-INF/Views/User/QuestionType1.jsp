@@ -30,9 +30,7 @@
 	color: white;
 }
 
-.card:active {
-	color: red;
-}
+
 </style>
 <body>
 
@@ -51,11 +49,9 @@
 	<div class="row">
 		<div class="col-3"></div>
 		<div class="col-6 row g-3">
-			<h5>Chọn Từ</h5>
-
-
 			<form action="/Question/${id}" method="post">
-				<h4 class="text-center my-3">(${voca.vocabularyType})
+				<h5>Chọn Từ</h5>
+				<h4 class="text-center my-1">(${voca.vocabularyType})
 					${voca.vietnameseVersion}</h4>
 				<input type="hidden" name="vocaId" value="${voca.vocabularyId}" />
 
@@ -64,14 +60,13 @@
 						<div class="col-6">
 							<input name="dapan"
 								class="btn w-100 py-5 align-items-center btn-success text-center"
-								onclick="setActiveButton(this) " type="button"
+								onclick="setActiveButton(this);" type="button"
 								value="${i.englishVerion}">
 						</div>
 
 					</c:forEach>
 				</div>
-				<button type="submit" 
-					class="btn btn-primary mt-2">Submit</button>
+
 				<input type="hidden" id="dapan" value="${voca.englishVerion}" /> <input
 					type="hidden" id="luachon" name="choice" value="" />
 			</form>
@@ -79,31 +74,55 @@
 		</div>
 
 		<div class="col-3"></div>
+		<div class="col-3"></div>
+
+		<div id="frame" class="col-6 row g-2 p-4 shadow-lg d-none mt-3">
+
+			<div class="col-12 ">
+				<h3>(${voca.vocabularyType}) ${voca.vietnameseVersion} :
+					${voca.englishVerion}</h3>
+				<form action="/Question/${id}">
+					<input class="btn btn-primary" type="submit" value="Countinue">
+				</form>
+
+			</div>
+
+		</div>
+		<div class="col-3"></div>
 	</div>
 
 	<script>
 
-	
-	
+
 		function setActiveButton(button) {
+			var dapan = document.getElementById("dapan").value;
 			// Xóa class active từ tất cả các button
 			var buttons = document.querySelectorAll('input[name="dapan"]');
 			buttons.forEach(function(btn) {
 				btn.classList.remove('active');
 			});
-
+			console.log(dapan);
+			console.log(button.value);
+			
+			if(button.value == dapan ){
+				document.getElementById("frame").style.backgroundColor = "green";
+			}else{
+				document.getElementById("frame").style.backgroundColor = "rgb(235, 52, 64)";
+			}
+			
 			// Thêm class active vào button được click
 			button.classList.add('active');
-			document.getElementById("luachon").setAttribute('value',button.value);
-			
-			console.log(button.value);
+			document.getElementById("luachon").setAttribute('value',
+					button.value);
+
 			// Đặt giá trị cho hidden input
-			document.getElementById('selectedAnswer').value = button.value;
+			document.getElementById('luachon').value = button.value;
+		
+			document.getElementById('frame').classList.remove('d-none')
+		
 		}
 
-		function submitForm() {
-			document.getElementById('questionForm').submit();
-		}
+		
 	</script>
 
 </body>
