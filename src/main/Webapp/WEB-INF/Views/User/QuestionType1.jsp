@@ -43,7 +43,7 @@
 			aria-label="Success striped example" aria-valuenow="25"
 			aria-valuemin="0" aria-valuemax="100">
 			<div class="progress-bar progress-bar-striped bg-success"
-				style="width: 25%"></div>
+				style="width: 100%"></div>
 		</div>
 	</div>
 	<!-- content -->
@@ -84,8 +84,10 @@
 			<div class="col-12 ">
 				<h3>(${voca.vocabularyType}) ${voca.vietnameseVersion} :
 					${voca.englishVerion}</h3>
-				<form action="/Question/${id}">
-					<input class="btn btn-primary" type="submit" value="Countinue">
+				<form action="/Question/${id}" method="post">
+					<input type="hidden" name="vocaId" value="${voca.vocabularyId}" />
+					<input type="hidden" name="choice" value="${voca.englishVerion}" />
+					<input class="btn btn-primary" type="submit" value="Continue">
 				</form>
 
 			</div>
@@ -118,12 +120,38 @@
 			document.getElementById("luachon").setAttribute('value',
 					button.value);
 
+			
+			clearInterval(interval);
 			// Đặt giá trị cho hidden input
 			document.getElementById('luachon').value = button.value;
-
 			document.getElementById('frame').classList.remove('d-none')
 
 		}
+		
+		var progressBar = document.querySelector('.progress-bar');
+		var duration = 15; // Thời gian giảm dần (60 giây)
+		var currentProgress = 100; // Bắt đầu từ 100%
+
+		var interval = setInterval(function() {
+		    currentProgress -= (100 / duration); // Giảm dần 100% trong 60 giây
+
+		    if (currentProgress <= 0) {
+		        currentProgress = 0;
+		        clearInterval(interval);
+		    }
+		    if(currentProgress == 0){
+	        	document.getElementById("frame").style.backgroundColor = "rgb(235, 52, 64)";
+		        document.getElementById('frame').classList.remove('d-none')
+		        var buttons = document.querySelectorAll('input[name="dapan"]');
+				buttons.forEach(function(btn) {
+					btn.disabled = true;
+					btn.classList.add('disabled');
+				});
+	        }
+
+		    progressBar.style.width = currentProgress + '%';
+		    progressBar.setAttribute('aria-valuenow', currentProgress);
+		}, 1000); // Cập nhật mỗi giây (1000 ms)
 	</script>
 
 </body>

@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.demo.DAO.LessionDetailRepository;
 import com.example.demo.DAO.ThematicRepository;
 import com.example.demo.DAO.VocabularyRepository;
+import com.example.demo.model.LessionDetail;
 import com.example.demo.model.Thematic;
 import com.example.demo.model.Vocabulary;
 import com.example.demo.service.impl.SessionService;
@@ -39,6 +41,10 @@ public class UserController {
 	VocabularyRepository daoVoca;
 	@Autowired
 	ThematicRepository daoThe;
+	@Autowired
+	LessionDetailRepository LessionDetailRepository;
+	
+
 
 	@RequestMapping("/page1")
 	public String requestMethodName() {
@@ -55,22 +61,40 @@ public class UserController {
 	@PostMapping("/Question/{id}")
 	public String ques2(@PathVariable("id") Optional<Long> id, Model model,
 			@RequestParam("vocaId") Optional<Long> vocaid, @RequestParam("choice") String luachon) {
-
 		Optional<Vocabulary> voca = daoVoca.findById(vocaid.orElse(0l));
+		
+		User currentUser = (User) session.get("userCurrent");
 		Vocabulary cauhoi = voca.orElse(null);
-		System.out.println(luachon);
-		if (cauhoi == null) {
+		
 
-		} else {
-			if (cauhoi.getEnglishVerion().equals(luachon)) {
-
-			} else {
-
-			}
-			return "redirect:" + id.orElse(0L);
-		}
-
-		return "redirect:" + id.orElse(0L);
+		if (currentUser == null) {
+			
+			
+		} 
+		
+		 LessionDetail lessionDetail = LessionDetailRepository.findByUserAndVocabulary(currentUser, cauhoi);
+		 
+		    if (lessionDetail == null) {
+		        lessionDetail = new LessionDetail();
+		        lessionDetail.setVocabulary(cauhoi);
+		        lessionDetail.setUser(currentUser);
+		        lessionDetail.setActive(false);
+		        lessionDetail.setNumberOfUses(0);
+		    }
+		    if (cauhoi.getEnglishVerion().equals(luachon)) {
+		        lessionDetail.setNumberOfUses(lessionDetail.getNumberOfUses() + 1);
+		        
+		      
+		        if (lessionDetail.getNumberOfUses() >= 5) {
+		            lessionDetail.setActive(true);
+		        }
+		        if ( currentUser !=null) {
+		        	LessionDetailRepository.save(lessionDetail);
+				}
+		        
+		    }
+		    
+		    return "redirect:" + id.orElse(0L);
 	}
 
 	
@@ -136,13 +160,24 @@ public class UserController {
 
 	@RequestMapping("/voca")
 	public String requestVoca(Model model) {
-		List<Thematic> listThe = daoThe.findAll();
-		model.addAttribute("u", listThe);
-		for (Thematic thematic : listThe) {
-			System.out.println(thematic.getThematicsName());
-		}
-		return "User/Vocabulary";
-
+	    List<Thematic> listThe = daoThe.findAll();
+	    User currentUser = (User) session.get("userCurrent");
+	    
+	    if (currentUser != null) {
+	        for (Thematic thematic : listThe) {
+	            List<LessionDetail> details = LessionDetailRepository.findByUserAndThematic(currentUser, thematic);
+	            int learnedCount = 0;
+	            for (LessionDetail detail : details) {
+	                if (detail.isActive()) {
+	                    learnedCount++;
+	                }
+	            }
+	            thematic.setLearnedVocabularyCount(learnedCount);
+	        }
+	    }
+	    
+	    model.addAttribute("u", listThe);
+	    return "User/Vocabulary";
 	}
 
 	@RequestMapping("/info")
@@ -156,7 +191,16 @@ public class UserController {
 	}
 
 	@RequestMapping("/statistic")
-	public String requestStatistic() {
+	public String requestStatistic(Model model) {
+		 User currentUser = (User) session.get("userCurrent");
+		 List<LessionDetail> LessionDetail = LessionDetailRepository.findByActive(currentUser);
+		 List<Vocabulary> Vocabulary = daoVoca.findAll();
+		 int count = Vocabulary.size() - LessionDetail.size();
+		 model.addAttribute("vocabUnlearned", count);
+		 if (LessionDetail.size()>0) {
+			 model.addAttribute("vocabActive", LessionDetail.size());
+			 }
+		
 		return "User/statistic";
 	}
 
