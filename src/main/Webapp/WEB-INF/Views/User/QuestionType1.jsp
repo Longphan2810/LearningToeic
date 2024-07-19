@@ -30,7 +30,10 @@
 	color: white;
 }
 
-
+.btn.disabled {
+	opacity: 1; /* Giữ nguyên độ trong suốt */
+	pointer-events: none; /* Vô hiệu hóa sự kiện chuột */
+}
 </style>
 <body>
 
@@ -92,24 +95,24 @@
 	</div>
 
 	<script>
-
-
 		function setActiveButton(button) {
 			var dapan = document.getElementById("dapan").value;
 			// Xóa class active từ tất cả các button
 			var buttons = document.querySelectorAll('input[name="dapan"]');
 			buttons.forEach(function(btn) {
 				btn.classList.remove('active');
+				btn.disabled = true;
+				btn.classList.add('disabled');
 			});
 			console.log(dapan);
 			console.log(button.value);
-			
-			if(button.value == dapan ){
+
+			if (button.value == dapan) {
 				document.getElementById("frame").style.backgroundColor = "green";
-			}else{
+			} else {
 				document.getElementById("frame").style.backgroundColor = "rgb(235, 52, 64)";
 			}
-			
+
 			// Thêm class active vào button được click
 			button.classList.add('active');
 			document.getElementById("luachon").setAttribute('value',
@@ -117,12 +120,10 @@
 
 			// Đặt giá trị cho hidden input
 			document.getElementById('luachon').value = button.value;
-		
-			document.getElementById('frame').classList.remove('d-none')
-		
-		}
 
-		
+			document.getElementById('frame').classList.remove('d-none')
+
+		}
 	</script>
 
 </body>
