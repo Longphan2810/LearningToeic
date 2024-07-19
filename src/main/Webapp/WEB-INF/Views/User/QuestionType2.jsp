@@ -18,7 +18,6 @@
 <style>
 #inputChoice {
 	background-color: white;
-	
 }
 </style>
 
@@ -31,7 +30,7 @@
 			aria-label="Success striped example" aria-valuenow="25"
 			aria-valuemin="0" aria-valuemax="100">
 			<div class="progress-bar progress-bar-striped bg-success"
-				style="width: 25%"></div>
+				style="width: 100%"></div>
 		</div>
 	</div>
 	<!-- content -->
@@ -47,8 +46,8 @@
 			<!-- Type Dap ann -->
 			<form action="/Question/${id}" method="POST">
 				<input type="hidden" name="vocaId" value="${voca.vocabularyId}" />
-				<input type="hidden" id="dapan" value="${voca.englishVerion.toUpperCase()}" />
-				 <input 
+				<input type="hidden" id="dapan"
+					value="${voca.englishVerion.toUpperCase()}" /> <input
 					class="form-control form-control-lg" type="text" id="inputChoice"
 					name="choice" placeholder="Nhập từ khóa"
 					aria-label=".form-control-lg example">
@@ -56,7 +55,8 @@
 				<div class="row g-2 mt-2">
 
 					<c:forEach var="i" items="${output}">
-							<input onclick="chonchu(this)" type="button" class="col-1 mx-1 py-4 text-center" value="${i}">
+						<input onclick="chonchu(this)" type="button"
+							class="col-1 mx-1 py-4 text-center" value="${i}">
 					</c:forEach>
 				</div>
 				<input class="btn btn-success my-3 w-100 shadow rounded"
@@ -75,11 +75,11 @@
 				</div>
 
 			</div>
-			
+
 		</div>
 
-		
-	
+
+
 	</div>
 
 
@@ -110,8 +110,29 @@
 				
 				document.getElementById("inputChoice").style.backgroundColor = "rgb(235, 52, 64)";
 			}
+			clearInterval(interval);
 				document.getElementById('frame').classList.remove('d-none')
 		}
+		
+		var progressBar = document.querySelector('.progress-bar');
+		var duration = 15; // Thời gian giảm dần (60 giây)
+		var currentProgress = 100; // Bắt đầu từ 100%
+
+		var interval = setInterval(function() {
+		    currentProgress -= (100 / duration); // Giảm dần 100% trong 60 giây
+
+		    if (currentProgress <= 0) {
+		        currentProgress = 0;
+		        clearInterval(interval);
+		        
+		    }
+		    if(currentProgress == 0){
+		    	check();
+		    	
+		    }
+		    progressBar.style.width = currentProgress + '%';
+		    progressBar.setAttribute('aria-valuenow', currentProgress);
+		}, 1000); // Cập nhật mỗi giây (1000 ms)
 	</script>
 
 </body>
