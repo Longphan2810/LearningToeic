@@ -53,7 +53,7 @@ a:hover {
           <div class="card-body p-5 text-center">
 			
             <h3 class="mb-5" style="color: #32CD32;">Sign up</h3>
-            <form:form class="m-3" action="/home#register" method="post" modelAttribute="nguoiDung">
+            <form:form class="m-3" action="/register" method="post" modelAttribute="nguoiDung">
               <div data-mdb-input-init class="form-outline mb-4">
               <form:errors path="username" class="text-danger"></form:errors>
               <label for="exampleInputUsername" class="form-label  text-light">Tên

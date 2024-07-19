@@ -52,7 +52,7 @@ a:hover {
           <div class="card-body p-5 text-center">
 			
             <h3 class="mb-5" style="color: #32CD32;">Sign in</h3>
-            <form:form class="m-3" action="/home#login" method="post" modelAttribute="nguoiDung">
+            <form:form class="m-3" action="/login" method="post" modelAttribute="nguoiDung">
               <div data-mdb-input-init class="form-outline mb-4">
                <form:errors path="email" class="text-danger"></form:errors>
               <form:input type="email" id="typeEmailX-2" class="form-control form-control-lg" path="email" />
