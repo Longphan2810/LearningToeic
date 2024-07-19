@@ -16,6 +16,22 @@
 	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 	crossorigin="anonymous"></script>
 </head>
+
+<style>
+.card:hover {
+	transition: all 0.4s;
+	background-color: black;
+	color: red;
+	background-color: black;
+}
+
+.btn.active {
+	background-color: #007bff;
+	color: white;
+}
+
+
+</style>
 <body>
 
 	<div>
@@ -23,7 +39,7 @@
 		<div class="progress" role="progressbar"
 			aria-label="Success striped example" aria-valuenow="25"
 			aria-valuemin="0" aria-valuemax="100">
-			<div class="progress-bar progress-bar-striped bg-success" 
+			<div class="progress-bar progress-bar-striped bg-success"
 				style="width: 25%"></div>
 		</div>
 	</div>
@@ -33,29 +49,81 @@
 	<div class="row">
 		<div class="col-3"></div>
 		<div class="col-6 row g-3">
-			<h5>Chọn Từ</h5>
-			<h4 class="text-center my-3">(verb) Cân Nhắc/Đắng đo</h4>
-			<c:forEach var="i" begin="1" end="4">
-				<div class="col-6 ">
-					<div class="card position-relative border-success shadow bg-body-tertiary rounded border-2 rounded-2" style="height: 10rem;">
-						<div
-							class="card-body text-center position-absolute top-50 start-50 translate-middle">
-							<h3>Dữ liệu</h3>
+			<form action="/Question/${id}" method="post">
+				<h5>Chọn Từ</h5>
+				<h4 class="text-center my-1">(${voca.vocabularyType})
+					${voca.vietnameseVersion}</h4>
+				<input type="hidden" name="vocaId" value="${voca.vocabularyId}" />
+
+				<div class="row g-2">
+					<c:forEach var="i" items="${listdapan}">
+						<div class="col-6">
+							<input name="dapan"
+								class="btn w-100 py-5 align-items-center btn-success text-center"
+								onclick="setActiveButton(this);" type="button"
+								value="${i.englishVerion}">
 						</div>
-					</div>
+
+					</c:forEach>
 				</div>
-			</c:forEach>
 
-
-
-
+				<input type="hidden" id="dapan" value="${voca.englishVerion}" /> <input
+					type="hidden" id="luachon" name="choice" value="" />
+			</form>
 
 		</div>
 
 		<div class="col-3"></div>
+		<div class="col-3"></div>
+
+		<div id="frame" class="col-6 row g-2 p-4 shadow-lg d-none mt-3">
+
+			<div class="col-12 ">
+				<h3>(${voca.vocabularyType}) ${voca.vietnameseVersion} :
+					${voca.englishVerion}</h3>
+				<form action="/Question/${id}">
+					<input class="btn btn-primary" type="submit" value="Countinue">
+				</form>
+
+			</div>
+
+		</div>
+		<div class="col-3"></div>
 	</div>
 
+	<script>
 
+
+		function setActiveButton(button) {
+			var dapan = document.getElementById("dapan").value;
+			// Xóa class active từ tất cả các button
+			var buttons = document.querySelectorAll('input[name="dapan"]');
+			buttons.forEach(function(btn) {
+				btn.classList.remove('active');
+			});
+			console.log(dapan);
+			console.log(button.value);
+			
+			if(button.value == dapan ){
+				document.getElementById("frame").style.backgroundColor = "green";
+			}else{
+				document.getElementById("frame").style.backgroundColor = "rgb(235, 52, 64)";
+			}
+			
+			// Thêm class active vào button được click
+			button.classList.add('active');
+			document.getElementById("luachon").setAttribute('value',
+					button.value);
+
+			// Đặt giá trị cho hidden input
+			document.getElementById('luachon').value = button.value;
+		
+			document.getElementById('frame').classList.remove('d-none')
+		
+		}
+
+		
+	</script>
 
 </body>
 </html>

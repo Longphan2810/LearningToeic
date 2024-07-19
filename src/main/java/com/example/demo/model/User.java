@@ -32,7 +32,18 @@
 		@Column(columnDefinition = "nvarchar(20) not null")
 		private String password;
 		@Column(columnDefinition = "nvarchar(100) not null")
+		
 		private String email;
+		private String token;
+		private Long timeToken;
+		
+		private String status;
 		@OneToMany(mappedBy = "user")
 		List<LessionDetail> lessionDetails;
+		
+		@Override
+		public String toString() {
+			return "Users [ email=" + email + ", name=" + username + "]";
+		}
+		
 	}

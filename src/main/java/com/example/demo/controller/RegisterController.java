@@ -1,0 +1,113 @@
+package com.example.demo.controller;
+
+import java.util.Date;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.demo.model.User;
+import com.example.demo.service.impl.AccountServiceImpl;
+import com.example.demo.service.impl.MailServiceImpl;
+import com.example.demo.service.impl.RegisterService;
+
+import jakarta.mail.MessagingException;
+import jakarta.servlet.http.HttpServletRequest;
+
+
+@Controller
+public class RegisterController {
+	@Autowired
+	MailServiceImpl mailServiceImpl;
+	@Autowired
+	HttpServletRequest request;
+	@Autowired
+	RegisterService registerService;
+	@Autowired
+	AccountServiceImpl userServiceImpl;
+	
+
+	@GetMapping("/register-form")
+	public String getlogin() {
+
+		return "User/register";
+
+	}
+
+	
+	
+	@PostMapping("/register")
+	public String getRegister( User userDto,Model model
+			) throws MessagingException {
+		
+		
+		User userDB = userServiceImpl.findByEmail(userDto.getEmail());
+		
+		if(userDB!=null) {
+			
+			System.out.println("null");
+			model.addAttribute("signup", "s-signup");
+			model.addAttribute("message", "Đã tồn tại email trong hệ thống");
+			model.addAttribute("userDTO", userDto);
+			return "User/register";
+		
+		} 
+		userDB = new User();
+		BeanUtils.copyProperties(userDto, userDB);
+		
+		registerService.setupToken(userDB);
+		
+		userServiceImpl.save(userDB);
+		String linkCofirmAccount = this.getUrlServier()+userDB.getToken();
+		mailServiceImpl.sendMaild(userDB.getEmail(),"Xác thực tài khoản",linkCofirmAccount);
+		
+		model.addAttribute("signup", "s-signup");
+		model.addAttribute("message", "Đăng ký thành công, Vui lòng kiểm tra mail");
+		return "User/register";
+	}
+	
+	@GetMapping("/ConfirmAccount")
+	public String getConfirmAcc(@RequestParam("TokenUser") String tokenUser,Model model) {
+		User userNeedConfirm = userServiceImpl.findByToken(tokenUser);
+		
+		if(userNeedConfirm==null) {
+			
+			model.addAttribute("signup", "s-signup");
+			model.addAttribute("message", "Đường dẫn đã cũ, Vui lòng đăng ký lại !");
+			return "forward:/register-form";
+		}
+		
+		Date dateCurrent = new Date();
+		
+		if(dateCurrent.getTime()<userNeedConfirm.getTimeToken()) {
+			System.out.println("ok");
+			userNeedConfirm.setTimeToken(null);
+			userNeedConfirm.setToken(null);
+			userNeedConfirm.setStatus("active");
+			userServiceImpl.save(userNeedConfirm);
+		} else {
+			userServiceImpl.delete(userNeedConfirm);
+			model.addAttribute("signup", "s-signup");
+			model.addAttribute("message", "Quá thời gian xác thực, Vui lòng đăng ký lại !");
+			return "forward:/register-form";
+			
+		}
+		model.addAttribute("message", "Đã xác thực tài khoản!");
+		return "User/register";
+	}
+	
+
+	private String getUrlServier() {
+
+		StringBuffer URL = request.getRequestURL();
+		URL.delete(URL.lastIndexOf("/"), URL.length());
+
+		return URL.toString() + "/ConfirmAccount?TokenUser=";
+	}
+
+}
