@@ -206,15 +206,17 @@ public class UserController {
 
 	@RequestMapping("/")
 	public String requestHome(Model model) {
-		User user = new User();
-		model.addAttribute("nguoiDung", user);
+		
+		
 		return "User/home2";
+		
+		
+		
 	}
 
 	@RequestMapping("/home")
 	public String requestHome2(Model model) {
-		User user = new User();
-		model.addAttribute("nguoiDung", user);
+	
 		return "User/home2";
 	}
 
@@ -228,6 +230,15 @@ public class UserController {
 		User user = new User();
 		model.addAttribute("nguoiDung", user);
 		return "User/Login";
+	}
+	
+	@PostMapping("/login")
+	public String login(Model model ) {
+		  
+		
+		
+		
+		return "User/home2";
 	}
 
 	@RequestMapping("/register")

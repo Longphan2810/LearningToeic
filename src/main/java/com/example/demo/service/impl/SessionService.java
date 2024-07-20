@@ -17,11 +17,10 @@ public class SessionService {
 	}
 	
 	public void set(String name,Object value) {
-		
 		session.setAttribute(name, value);
 		
 	}
-	
+
 	public void remove(String name) {
 		
 		session.removeAttribute(name);
