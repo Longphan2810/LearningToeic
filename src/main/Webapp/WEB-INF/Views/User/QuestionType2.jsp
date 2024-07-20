@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Neko Vocab</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -76,11 +76,9 @@
 
 			</div>
 
-<<<<<<< HEAD
 			</div>
 
-=======
->>>>>>> refs/remotes/origin/main
+
 		</div>
 
 
@@ -97,8 +95,8 @@
 			var traloi =  document.getElementById("inputChoice").value;
 			var bien = button.value;
 			document.getElementById("inputChoice").value = traloi + bien;
-			console.log(bien);
-			button.parentNode.removeChild(button);
+			//console.log(bien);
+			//button.parentNode.removeChild(button);
 			
 			
 			

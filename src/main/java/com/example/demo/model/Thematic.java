@@ -35,9 +35,6 @@ public class Thematic {
 	@Column(columnDefinition = "nvarchar(250)")
     private String image;
 
-
-	@Column(columnDefinition = "nvarchar(max)")
-    private String thematicsImage;
 	@OneToMany(mappedBy = "thematic")
 	List<Vocabulary> vocabularies;
 

@@ -62,7 +62,7 @@ public class LoginAndLogoutController {
 		}
 		
 		if(!userCurrent.getPassword().equals(pass)) {
-			
+
 			model.addAttribute("saiPass", true);
 			return "User/Login";
 			

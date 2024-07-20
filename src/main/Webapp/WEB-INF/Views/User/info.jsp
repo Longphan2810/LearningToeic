@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Neko Vocab</title>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -114,7 +114,7 @@
 							</div>
 							<div class="flex-grow-1 ms-3">
 								<div class="d-flex flex-row align-items-center mb-2">
-									<p class="mb-0 me-2">Long Phan</p>
+									<p class="mb-0 me-2">Tran Luong</p>
 
 								</div>
 								<div>
