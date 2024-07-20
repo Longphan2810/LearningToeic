@@ -16,6 +16,10 @@ public class SessionService {
 
 	}
 	
+	public <T> T getAttribute(String name) {
+		return (T) session.getAttribute(name);
+	}
+	
 	public void set(String name,Object value) {
 		session.setAttribute(name, value);
 		

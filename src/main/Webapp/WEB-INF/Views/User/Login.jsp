@@ -62,7 +62,7 @@ a:hover {
 
 							<form class="m-3" action="/login" method="post">
 								<div data-mdb-input-init class="form-outline mb-4">
-									<label style="color: #32CD32;" for="typeEmailX-2">${message}</label>
+									<label style="color: red;" for="typeEmailX-2">${message}</label>
 									<input type="email" id="typeEmailX-2"
 										class="form-control form-control-lg" name="email" /> <label
 										style="color: #32CD32;" for="typeEmailX-2">Email</label>
