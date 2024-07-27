@@ -39,6 +39,7 @@
 
 	<div>
 		<jsp:include page="../component/navbarQuestion.jsp"></jsp:include>
+		<h6 class="m-2">${count } / 12 câu</h6>
 		<div class="progress" role="progressbar"
 			aria-label="Success striped example" aria-valuenow="25"
 			aria-valuemin="0" aria-valuemax="100">
@@ -48,6 +49,7 @@
 	</div>
 	<!-- content -->
 	<div></div>
+	
 	<!-- Dap an -->
 	<div class="row">
 		<div class="col-3"></div>
@@ -82,7 +84,7 @@
 		<div id="frame" class="col-6 row g-2 p-4 shadow-lg d-none mt-3">
 
 			<div class="col-12 ">
-				<h3>(${voca.vocabularyType}) ${voca.vietnameseVersion} :
+				<h3 class="text-light">(${voca.vocabularyType}) ${voca.vietnameseVersion} :
 					${voca.englishVerion}</h3>
 				<form action="/Question/${id}" method="post">
 					<input type="hidden" name="vocaId" value="${voca.vocabularyId}" />
@@ -110,7 +112,7 @@
 			console.log(button.value);
 
 			if (button.value == dapan) {
-				document.getElementById("frame").style.backgroundColor = "green";
+				document.getElementById("frame").style.backgroundColor = "#198754";
 			} else {
 				document.getElementById("frame").style.backgroundColor = "rgb(235, 52, 64)";
 			}
@@ -129,7 +131,7 @@
 		}
 		
 		var progressBar = document.querySelector('.progress-bar');
-		var duration = 15; // Thời gian giảm dần (60 giây)
+		var duration = 50; // Thời gian giảm dần (60 giây)
 		var currentProgress = 100; // Bắt đầu từ 100%
 
 		var interval = setInterval(function() {

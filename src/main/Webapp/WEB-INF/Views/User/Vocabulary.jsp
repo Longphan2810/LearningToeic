@@ -80,7 +80,7 @@
 			<div class=" w-100  " style="height: 70px;">
 				<div class="my-3 ms-3"
 					style="font-weight: 700; font-size: 30px; color: rgb(25, 145, 71);">
-					600 từ vựng toeic</div>
+					600 từ vựng toeic </div>
 			</div>
 			<div class=" w-100 shadow rounded row "
 				style="overflow-y: scroll; height: 700px;">

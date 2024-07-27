@@ -249,12 +249,10 @@ supports ((position:-webkit-sticky) or (position:sticky)) { .sticky-top
 											<h5 class="card-title">introduce about website</h5>
 											<h6 class="card-subtitle mb-2 text-body-secondary">Neko
 												vocab</h6>
-											<p class="card-text">Some quick example text to build on
-												the card title and make up the bulk of the card's content.</p>
+											<p class="card-text">Neko Vocab is an online platform for thematic vocabulary learning, offering interactive lists, engaging visuals, and progress tracking to enhance language acquisition.</p>
 
 											<h5 class="card-title">Relate to</h5>
-											<p class="card-text">Some quick example text to build on
-												the card title and make up the bulk of the card's content.</p>
+											<p class="card-text">Neko Vocab is an online platform focused on thematic vocabulary learning, featuring interactive lists, engaging visuals, and user progress tracking.</p>
 										</div>
 									</div>
 								</div>
@@ -287,7 +285,7 @@ supports ((position:-webkit-sticky) or (position:sticky)) { .sticky-top
 							<h3>Contact info</h3>
 							<div class="d-flex">
 								<i class="bi bi-envelope-at-fill text-primary"></i>
-								<h6 class="ms-3">nekovocb@gmail.com</h6>
+								<h6 class="ms-3">nekovocab@gmail.com</h6>
 							</div>
 							<div class="d-flex">
 								<i class="bi bi-telephone-inbound-fill text-primary"></i>

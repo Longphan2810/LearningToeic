@@ -1,10 +1,9 @@
 package com.example.demo.controller;
 
-import java.net.http.HttpRequest;
-import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Iterator;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
@@ -15,8 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.demo.DAO.LessionDetailRepository;
 import com.example.demo.DAO.ThematicRepository;
@@ -25,10 +24,7 @@ import com.example.demo.model.LessionDetail;
 import com.example.demo.model.Thematic;
 import com.example.demo.model.Vocabulary;
 import com.example.demo.service.impl.SessionService;
-
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.websocket.server.PathParam;
-
 import com.example.demo.model.User;
 
 @Controller
@@ -43,9 +39,8 @@ public class UserController {
 	ThematicRepository daoThe;
 	@Autowired
 	LessionDetailRepository LessionDetailRepository;
-	
 
-
+	int count = 0;
 	@RequestMapping("/page1")
 	public String requestMethodName() {
 		return "User/Account";
@@ -60,129 +55,164 @@ public class UserController {
 
 	@PostMapping("/Question/{id}")
 	public String ques2(@PathVariable("id") Optional<Long> id, Model model,
-			@RequestParam("vocaId") Optional<Long> vocaid, @RequestParam("choice") String luachon) {
-		Optional<Vocabulary> voca = daoVoca.findById(vocaid.orElse(0l));
+			@RequestParam("vocaId") Optional<Long> vocaid, @RequestParam("choice") String luachon,RedirectAttributes redirectAttributes) {
 		
+		count++;
+		redirectAttributes.addFlashAttribute("count",count);
+		
+		Optional<Vocabulary> voca = daoVoca.findById(vocaid.orElse(0l));
+
 		User currentUser = (User) session.get("userCurrent");
 		Vocabulary cauhoi = voca.orElse(null);
-		
 
 		if (currentUser == null) {
-			
-			
-		} 
-		
-		 LessionDetail lessionDetail = LessionDetailRepository.findByUserAndVocabulary(currentUser, cauhoi);
-		 
-		    if (lessionDetail == null) {
-		        lessionDetail = new LessionDetail();
-		        lessionDetail.setVocabulary(cauhoi);
-		        lessionDetail.setUser(currentUser);
-		        lessionDetail.setActive(false);
-		        lessionDetail.setNumberOfUses(0);
-		    }
-		    if (cauhoi.getEnglishVerion().equals(luachon)) {
-		        lessionDetail.setNumberOfUses(lessionDetail.getNumberOfUses() + 1);
-		        
-		      
-		        if (lessionDetail.getNumberOfUses() >= 5) {
-		            lessionDetail.setActive(true);
-		        }
-		        if ( currentUser !=null) {
-		        	LessionDetailRepository.save(lessionDetail);
-				}
-		        
-		    }
-		    
-		    return "redirect:" + id.orElse(0L);
-	}
 
-	
+		}
+
+		LessionDetail lessionDetail = LessionDetailRepository.findByUserAndVocabulary(currentUser, cauhoi);
+
+		if (lessionDetail == null) {
+			lessionDetail = new LessionDetail();
+			lessionDetail.setVocabulary(cauhoi);
+			lessionDetail.setUser(currentUser);
+			lessionDetail.setActive(false);
+			lessionDetail.setNumberOfUses(0);
+		}
+		if (cauhoi.getEnglishVerion().equals(luachon)) {
+			lessionDetail.setNumberOfUses(lessionDetail.getNumberOfUses() + 1);
+
+			if (lessionDetail.getNumberOfUses() >= 5) {
+				lessionDetail.setActive(true);
+			}
+			if (currentUser != null) {
+				LessionDetailRepository.save(lessionDetail);
+			}
+
+		}
+		if(count == 12) {
+			
+			return "redirect:/voca";
+		
+		}
+			return "redirect:" + id.orElse(0L);
+		
+		
+		
+		
+	}
 
 	@RequestMapping("/Question/{id}")
 	public String ques(@PathVariable("id") Optional<Long> id, Model model) {
-		// tim chuyen de theo id
-		Optional<Thematic> t = daoThe.findById(id.orElse(0L));
+		
+		model.addAttribute("count",count);
+		User user = session.getAttribute("userCurrent");
+		
+		if (user == null) {
+			model.addAttribute("message", "vui lòng đăng nhập để sử dụng dịch vụ");
+			return "forward:/login";
+		} else {
+			// tim chuyen de theo id
+			Optional<Thematic> t = daoThe.findById(id.orElse(0L));
 
-		// tim list tu vung theo chuyen de
-		List<Vocabulary> listVoca = daoVoca.FindAllByThematic(t.orElse(null));
-		model.addAttribute("id", id.orElse(0L));
+			// tim list tu vung theo chuyen de
+			List<Vocabulary> listVoca = daoVoca.FindAllByThematic(t.orElse(null));
+			model.addAttribute("id", id.orElse(0L));
 
-		// add cau hoi
-		Random rd = new Random();
-		int number;
-		do {
-			number = rd.nextInt(12);
-		} while (number == lastNumber);
+			// add cau hoi
+			Random rd = new Random();
+			int number;
+			do {
+				number = rd.nextInt(12);
+			} while (number == lastNumber);
 
-		lastNumber = number;
-		model.addAttribute("voca", listVoca.get(number));
+			lastNumber = number;
+			model.addAttribute("voca", listVoca.get(number));
 
-		// add dap an vao format
-		Vocabulary dapan = listVoca.get(number);// dap an temp 1
-		String input = listVoca.get(number).getEnglishVerion();// dap an temp 2
+			// add dap an vao format
+			Vocabulary dapan = listVoca.get(number);// dap an temp 1
+			String input = listVoca.get(number).getEnglishVerion();// dap an temp 2
 
-		listVoca.remove(number);
+			listVoca.remove(number);
 
-		// random temp
-		int temp = rd.nextInt(2);
+			// random temp
+			int temp = rd.nextInt(2);
 
-		// temp 2
-		if (temp == 1) {
-			String[] output = input.toUpperCase().split("");
-			List<String> listoutput = Arrays.asList(output);
-			Collections.shuffle(listoutput);
-			model.addAttribute("output", listoutput);
-			return "User/QuestionType2";
-		}
-		// temp 1
-		else {
-			Collections.shuffle(listVoca);
-			List<Vocabulary> listdapan = listVoca.subList(0, 3);
-			listdapan.add(dapan);
-			Collections.shuffle(listdapan);
+			// temp 2
+			if (temp == 1) {
+				String[] output = input.toUpperCase().split("");
+				List<String> listoutput = Arrays.asList(output);
+				Collections.shuffle(listoutput);
+				model.addAttribute("output", listoutput);
+				return "User/QuestionType2";
+			}
+			// temp 1
+			else {
+				Collections.shuffle(listVoca);
+				List<Vocabulary> listdapan = listVoca.subList(0, 3);
+				listdapan.add(dapan);
+				Collections.shuffle(listdapan);
 
-			model.addAttribute("listdapan", listdapan);
-			return "User/QuestionType1";
+				model.addAttribute("listdapan", listdapan);
+				return "User/QuestionType1";
+			}
 		}
 	}
 
-	@RequestMapping("/Question2")
-	public String ques2(Model model) {
-		String input = "Hello";
-		String[] output = input.toUpperCase().split("");
-		model.addAttribute("output", output);
-		for (String string : output) {
-			System.out.println(string);
-		}
-		return "User/QuestionType2";
-	}
+//	@RequestMapping("/Question2")
+//	public String ques2(Model model) {
+//		String input = "Hello";
+//		String[] output = input.toUpperCase().split("");
+//		model.addAttribute("output", output);
+//		for (String string : output) {
+//			System.out.println(string);
+//		}
+//		return "User/QuestionType2";
+//	}
 
 	@RequestMapping("/voca")
 	public String requestVoca(Model model) {
-	    List<Thematic> listThe = daoThe.findAll();
-	    User currentUser = (User) session.get("userCurrent");
-	    
-	    if (currentUser != null) {
-	        for (Thematic thematic : listThe) {
-	            List<LessionDetail> details = LessionDetailRepository.findByUserAndThematic(currentUser, thematic);
-	            int learnedCount = 0;
-	            for (LessionDetail detail : details) {
-	                if (detail.isActive()) {
-	                    learnedCount++;
-	                }
-	            }
-	            thematic.setLearnedVocabularyCount(learnedCount);
-	        }
-	    }
-	    
-	    model.addAttribute("u", listThe);
-	    return "User/Vocabulary";
+		count = 0;
+		model.addAttribute("count",0);
+		User user = session.getAttribute("userCurrent");
+
+		if (user == null) {
+			model.addAttribute("message", "vui lòng đăng nhập để sử dụng dịch vụ");
+			return "forward:/login";
+		} else {
+			List<Thematic> listThe = daoThe.findAll();
+			User currentUser = (User) session.get("userCurrent");
+
+			if (currentUser != null) {
+				for (Thematic thematic : listThe) {
+					List<LessionDetail> details = LessionDetailRepository.findByUserAndThematic(currentUser, thematic);
+					int learnedCount = 0;
+					for (LessionDetail detail : details) {
+						if (detail.isActive()) {
+							learnedCount++;
+						}
+					}
+					thematic.setLearnedVocabularyCount(learnedCount);
+				}
+			}
+
+			model.addAttribute("u", listThe);
+			return "User/Vocabulary";
+
+		}
+
 	}
 
 	@RequestMapping("/info")
-	public String requestInfo() {
-		return "User/info";
+	public String requestInfo(Model model) {
+		User user = session.getAttribute("userCurrent");
+
+		if (user == null) {
+			model.addAttribute("message", "vui lòng đăng nhập để sử dụng dịch vụ");
+			return "forward:/login";
+		} else {
+			return "User/info";
+		}
+
 	}
 
 	@RequestMapping("/contact")
@@ -192,29 +222,37 @@ public class UserController {
 
 	@RequestMapping("/statistic")
 	public String requestStatistic(Model model) {
-		 User currentUser = (User) session.get("userCurrent");
-		 List<LessionDetail> LessionDetail = LessionDetailRepository.findByActive(currentUser);
-		 List<Vocabulary> Vocabulary = daoVoca.findAll();
-		 int count = Vocabulary.size() - LessionDetail.size();
-		 model.addAttribute("vocabUnlearned", count);
-		 if (LessionDetail.size()>0) {
-			 model.addAttribute("vocabActive", LessionDetail.size());
-			 }
-		
-		return "User/statistic";
+
+		User user = session.getAttribute("userCurrent");
+
+		if (user == null) {
+			model.addAttribute("message", "vui lòng đăng nhập để sử dụng dịch vụ");
+			return "forward:/login";
+		} else {
+			User currentUser = (User) session.get("userCurrent");
+			List<LessionDetail> LessionDetail = LessionDetailRepository.findByActive(currentUser);
+			List<Vocabulary> Vocabulary = daoVoca.findAll();
+			int count = Vocabulary.size() - LessionDetail.size();
+			model.addAttribute("vocabUnlearned", count);
+			if (LessionDetail.size() > 0) {
+				model.addAttribute("vocabActive", LessionDetail.size());
+			}
+
+			return "User/statistic";
+		}
+
 	}
 
 	@RequestMapping("/")
 	public String requestHome(Model model) {
-		User user = new User();
-		model.addAttribute("nguoiDung", user);
+
 		return "User/home2";
+
 	}
 
 	@RequestMapping("/home")
 	public String requestHome2(Model model) {
-		User user = new User();
-		model.addAttribute("nguoiDung", user);
+
 		return "User/home2";
 	}
 

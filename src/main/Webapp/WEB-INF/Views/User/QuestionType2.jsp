@@ -23,9 +23,9 @@
 
 </head>
 <body>
-
 	<div>
 		<jsp:include page="../component/navbarQuestion.jsp"></jsp:include>
+		<h6 class="m-2">${count} / 12 câu</h6>
 		<div class="progress" role="progressbar"
 			aria-label="Success striped example" aria-valuenow="25"
 			aria-valuemin="0" aria-valuemax="100">
@@ -66,24 +66,23 @@
 			<div id="frame" class="col-12 row g-2 p-4 shadow-lg d-none mt-2">
 
 				<div class="col-12 ">
-				<h3>(${voca.vocabularyType}) ${voca.vietnameseVersion} :
-					${voca.englishVerion}</h3>
-				<form action="/Question/${id}" method="post">
-					<input type="hidden" name="vocaId" value="${voca.vocabularyId}" />
-					<input type="hidden" name="choice" value="${voca.englishVerion}" />
-					<input class="btn btn-primary" type="submit" value="Continue">
-				</form>
+					<h3>(${voca.vocabularyType}) ${voca.vietnameseVersion} :
+						${voca.englishVerion}</h3>
+					<form action="/Question/${id}" method="post">
+						<input type="hidden" name="vocaId" value="${voca.vocabularyId}" />
+						<input type="hidden" name="choice" value="${voca.englishVerion}" />
+						<input class="btn btn-primary" type="submit" value="Continue">
+					</form>
 
+				</div>
 			</div>
+
 
 			</div>
 
 
 		</div>
 
-
-
-	</div>
 
 
 
@@ -105,10 +104,10 @@
 		function check() {
 			var traloi = document.getElementById("inputChoice").value;
 			var dapan = document.getElementById("dapan").value;
-
+			traloi = traloi.toUpperCase();
 			if (dapan == traloi) {
 				
-				document.getElementById("inputChoice").style.backgroundColor = "rgb(52, 235, 88)";
+				document.getElementById("inputChoice").style.backgroundColor = "#198754";
 			} else {
 				
 				document.getElementById("inputChoice").style.backgroundColor = "rgb(235, 52, 64)";
@@ -118,7 +117,7 @@
 		}
 		
 		var progressBar = document.querySelector('.progress-bar');
-		var duration = 15; // Thời gian giảm dần (60 giây)
+		var duration = 30; // Thời gian giảm dần (60 giây)
 		var currentProgress = 100; // Bắt đầu từ 100%
 
 		var interval = setInterval(function() {
