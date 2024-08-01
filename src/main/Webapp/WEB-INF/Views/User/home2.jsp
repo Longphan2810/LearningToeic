@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Neko Vocab</title>
-
+<link rel="icon" type="image/x-icon" href="/assets/image/logo.jpg">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -153,8 +153,7 @@ supports ((position:-webkit-sticky) or (position:sticky)) { .sticky-top
 						<div class="m-3 d-flex container-fuint">
 							<div class="col-6 ">
 								<div class="me-5 bg-light rounded">
-									<h5 class="m-3">Explore over 50,000 of the most commonly
-										used English vocabulary words</h5>
+									<h5 class="m-3">Khám phá hơn 50.000 từ vựng tiếng Anh thông dụng nhất</h5>
 
 									<div class="d-flex">
 										<div class="col-5 ms-2 mb-2">
@@ -164,9 +163,8 @@ supports ((position:-webkit-sticky) or (position:sticky)) { .sticky-top
 														<h5 class="card-title text-success text-center">vocabulary
 															reviews</h5>
 
-														<p class="card-text">Some quick example text to build
-															on the card title and make up the bulk of the card's
-															content.</p>
+														<p class="card-text">
+														Dễ dàng ôn lại các từ đã học và ghi nhớ lâu hơn </p>
 
 													</div>
 												</div></a>
@@ -178,9 +176,7 @@ supports ((position:-webkit-sticky) or (position:sticky)) { .sticky-top
 														<h5 class="card-title text-success text-center">learn
 															new vocabulary</h5>
 
-														<p class="card-text">Some quick example text to build
-															on the card title and make up the bulk of the card's
-															content.</p>
+														<p class="card-text">Học trắc nghiệm theo phương pháp trắc nghiệm giúp ghi nhớ từng vựng lâu hơn .</p>
 
 													</div>
 												</div></a>
@@ -193,8 +189,7 @@ supports ((position:-webkit-sticky) or (position:sticky)) { .sticky-top
 										<div class="card-body">
 											<h5 class="card-title">Continue learning</h5>
 
-											<p class="card-text">Some quick example text to build on
-												the card title and make up the bulk of the card's content.</p>
+											<p class="card-text">Học từng vựng mới để tiếp tục chuỗi học </p>
 											<a href="#" class="btn btn-primary col-12">Learn new
 												words</a>
 										</div>
@@ -246,13 +241,11 @@ supports ((position:-webkit-sticky) or (position:sticky)) { .sticky-top
 								<div class="col-11 m-2">
 									<div class="card" >
 										<div class="card-body">
-											<h5 class="card-title">introduce about website</h5>
+											<h5 class="card-title">Giới thiệu về trang web</h5>
 											<h6 class="card-subtitle mb-2 text-body-secondary">Neko
 												vocab</h6>
-											<p class="card-text">Neko Vocab is an online platform for thematic vocabulary learning, offering interactive lists, engaging visuals, and progress tracking to enhance language acquisition.</p>
+											<p class="card-text">Neko Vocab là một nền tảng trực tuyến để học từ vựng theo chủ đề, cung cấp danh sách tương tác, hình ảnh hấp dẫn và theo dõi tiến trình để nâng cao khả năng tiếp thu ngôn ngữ.</p>
 
-											<h5 class="card-title">Relate to</h5>
-											<p class="card-text">Neko Vocab is an online platform focused on thematic vocabulary learning, featuring interactive lists, engaging visuals, and user progress tracking.</p>
 										</div>
 									</div>
 								</div>
@@ -269,8 +262,7 @@ supports ((position:-webkit-sticky) or (position:sticky)) { .sticky-top
 									style="width: 40px; height: 40px">
 								<h3>Neko vocab</h3>
 							</div>
-							<p class="card-text ms-4">Some quick example text to build on the
-								card title and make.</p>
+							<p class="card-text ms-4">Ứng dụng học từ vựng miễn phí, ai cũng có thể học.</p>
 							<div class="d-flex justify-content-evenly">
 								<i class="bi bi-facebook text-primary"></i> <i
 									class="bi bi-messenger text-primary"></i> <i

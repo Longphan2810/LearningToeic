@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Neko Vocab</title>
-
+<link rel="icon" type="image/x-icon" href="/assets/image/logo.jpg">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -90,7 +90,7 @@
 								${vocabActive}	
 							</div>
 							<div class="d-flex justify-content-between">
-								<h5 class="text-light ms-3">Word learned</h5>
+								<h5 class="text-light ms-3">Từ đã học</h5>
 
 								<a class="text-light me-3"><svg
 										xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -105,7 +105,7 @@
 						<div class="m-3  col-6 bg-primary rounded">
 							<div class="m-3 pe-2 bg-light col-2 text-center rounded">${vocabUnlearned}</div>
 							<div class="d-flex justify-content-between">
-								<h5 class="text-light ms-3">unlearned words</h5>
+								<h5 class="text-light ms-3">Từ chưa học</h5>
 
 								<a class="text-light me-3"><svg
 										xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -134,12 +134,12 @@
 													d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15" />
 							</svg></a>
 										<div>
-											<h6 class="m-1">3 Day</h6>
-											<p class="">Current streak</p>
+											<h6 class="m-1">3 ngày</h6>
+											<p class="">Chuỗi học tập</p>
 										</div>
 
 									</div>
-									<h6>You had the streak today</h6>
+									<h6 class="ms-2">Bạn đã học được chuỗi đến ngày hôm nay</h6>
 
 								</div>
 								<div class="col-6 ">
@@ -152,11 +152,11 @@
 													d="M6.5 0a.5.5 0 0 0 0 1H7v1.07A7.001 7.001 0 0 0 8 16a7 7 0 0 0 5.29-11.584l.013-.012.354-.354.353.354a.5.5 0 1 0 .707-.707l-1.414-1.415a.5.5 0 1 0-.707.707l.354.354-.354.354-.012.012A6.97 6.97 0 0 0 9 2.071V1h.5a.5.5 0 0 0 0-1zm2 5.6V9a.5.5 0 0 1-.5.5H4.5a.5.5 0 0 1 0-1h3V5.6a.5.5 0 1 1 1 0" />
 						</svg></a>
 										<div>
-											<h6 class="m-1">6 Day</h6>
-											<p class="">Longest streak</p>
+											<h6 class="m-1">150 ngày</h6>
+											<p class="">Chuỗi dài</p>
 										</div>
 									</div>
-									<h6>Let's break this record</h6>
+									<h6 class="ms-2">Hãy phá vỡ kỷ lục này</h6>
 
 								</div>
 
@@ -167,16 +167,16 @@
 				</div>
 
 				<div class="col-6 ms-5 ">
-					<h5 class="m-4">Weed chart</h5>
+					<h5 class="m-4">Bảng thống kê</h5>
 					<div class="m-1 ms-3 border border-dark-subtle rounded">
 						<div class="m-3">
 							<div class="d-flex">
 								<i class="bi bi-circle-fill me-2 text-success"></i>
-								<p>Number of words learned</p>
+								<p>Số từ vựng đã học</p>
 							</div>
 							<div class="d-flex">
 								<i class="bi bi-circle-fill me-2 text-primary"></i>
-								<p>Number of words reviewed</p>
+								<p>Số từ vựng ôn lại</p>
 							</div>
 
 						</div>
@@ -184,7 +184,7 @@
 						<div class=" grid-margin stretch-card">
 							<div class="card">
 								<div class="card-body">
-									<h4 class="card-title">Area chart</h4>
+									<h4 class="card-title">Biểu đồ đường</h4>
 									<canvas id="areaChart" style="height: 250px"></canvas>
 								</div>
 							</div>
